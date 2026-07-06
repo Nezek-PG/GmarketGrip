@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Center // Gmarket Grip</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="./img/logo.webp">
+  <script src="./dev.js"></script>
+  
+  <style>
+    /* Custom tailwind style injects for neon colors matching Grip theme */
+    .text-neon { color: #d4ff00; }
+    .bg-neon { background-color: #d4ff00; }
+    .border-neon { border-color: rgba(212, 255, 0, 1); }
+    .border-neon-subtle { border-color: rgba(212, 255, 0, 0.2); }
+    .shadow-neon { box-shadow: 0 0 15px rgba(212, 255, 0, 0.2); }
+    .shadow-neon-intense { box-shadow: 0 0 25px rgba(212, 255, 0, 0.45); }
+    
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #050506;
+    }
+    .font-racing {
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    /* HUD Scanline Effect from your template */
+    .hud-scanline::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 999;
+      background-size: 100% 4px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Tab transitions */
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="text-gray-300 overflow-x-hidden selection:bg-neon selection:text-black hud-scanline min-h-screen flex flex-col justify-between">
+
+    <!-- NAVIGATION -->
+    <nav class="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3 group cursor-pointer" onclick="window.location.href='/'">
+            <span class="font-racing text-2xl font-black tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">GRIP<span class="text-neon">//</span>LOGIC</span>
+        </div>
+      
+        <a href="shop.html" class="border border-neon bg-neon/5 hover:bg-neon hover:text-black px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-neon hover:shadow-neon-intense flex items-center space-x-2 transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Access Shop</span>
+        </a>
+    </nav>
+
+    <!-- MAIN LEGAL CONTAINER -->
+    <main class="container mx-auto px-6 pt-32 pb-24 max-w-5xl flex-grow">
+        
+        <!-- HEADER ZONE & TAB SWITCHER -->
+        <div class="text-center mb-16 space-y-6">
+            <div class="inline-flex items-center space-x-2 border border-neon/30 bg-neon/5 px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-neon rounded-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-neon animate-ping"></span>
+                <span>SECURE DATABASE // LEGAL NODE</span>
+            </div>
+            
+            <h1 id="main-title" class="font-racing text-4xl md:text-6xl font-black tracking-tight text-white uppercase leading-none">
+                TERMS OF <span class="text-neon drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]">SERVICE.</span>
+            </h1>
+
+            <!-- Technical Control Tab Bar -->
+            <div class="inline-flex p-1 bg-zinc-950 border border-zinc-800 rounded-sm">
+                <button onclick="switchTab('terms')" id="btn-terms" class="px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 bg-neon text-black font-racing shadow-neon">
+                    Terms of Service
+                </button>
+                <button onclick="switchTab('privacy')" id="btn-privacy" class="px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 text-zinc-500 hover:text-white font-racing">
+                    Privacy Policy
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= TAB 1: TERMS OF SERVICE ================= -->
+        <div id="content-terms" class="tab-content active space-y-8">
+            <div class="font-mono text-[11px] text-zinc-500 border-b border-zinc-900 pb-4 flex justify-between items-center">
+                <span>REVISION_REF // 2026.02.14</span>
+                <span class="text-neon">// CORE EXECUTION POLICY</span>
+            </div>
+
+            <!-- Block 1 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-neon"></div>
+                <div class="flex items-center gap-3 font-mono text-[10px] text-neon font-bold tracking-wider uppercase">// DATA ROOT 01</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">1. Acceptance of Terms</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    By purchasing, downloading, installing, or deploying Gmarket Grip / Grip//LOGIC architectural simulation tools ("the Software"), you unconditionally agree to be bound securely under these Terms of Service. If you do not accept these validation blocks, terminate execution immediately.
+                </p>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// DATA ROOT 02</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">2. License Matrix & Allocation</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Upon verified cryptographic or transaction clearance, Gmarket allocates a singular, non-exclusive, non-transferable runtime token. The framework is strictly licensed for isolated client simulation instances and remains proprietary intellectual asset property of Gmarket at all vectors.
+                </p>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// DATA ROOT 03</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">3. Non-Refundable Clearance</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Due to the immutable digital state of software core key execution payloads and immediate telemetry-slot validation, <strong>all asset clearances are absolute and non-refundable</strong>.
+                </p>
+                <div class="bg-zinc-950/80 p-4 border border-zinc-900 font-mono text-xs text-zinc-500 rounded-sm">
+                    <span class="text-neon font-bold uppercase tracking-wider block mb-1">// RISKS RECOGNITION</span>
+                    Disruptions via game core upgrades, simulator account suspensions, client-side variable blockades, or target anti-cheat modifications do not bypass or invalidate our strictly enforced zero-refund architecture.
+                </div>
+            </div>
+
+            <!-- Block 4 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// DATA ROOT 04</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">4. Integrity Parameters & Restrictions</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">You are explicitly forbidden from executing any of the following operation profiles:</p>
+                <ul class="list-none space-y-2 text-xs font-mono text-zinc-400 pl-2">
+                    <li class="flex items-start gap-2"><span class="text-neon">[!]</span> Reverse engineering, microcode decompilation, memory dumping, or tracing injection frameworks.</li>
+                    <li class="flex items-start gap-2"><span class="text-neon">[!]</span> Redistributing individual key tokens, sub-leasing asset ports, or structural deployment onto shared platform clusters.</li>
+                    <li class="flex items-start gap-2"><span class="text-neon">[!]</span> Utilizing core injection paths to alter simulation boundaries in explicit breach of third-party platform conditions.</li>
+                </ul>
+            </div>
+
+            <!-- Block 5 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// DATA ROOT 05</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">5. Telemetry Disclaimer & Liability</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    The software relies on complex mathematical prediction routines mapped outward from physics matrix baselines. Safe execution remains inherently unpredictable over dynamic system horizons; Gmarket rejects all liability for account structural updates, telemetry disqualifications, or software anomalies.
+                </p>
+            </div>
+        </div>
+
+        <!-- ================= TAB 2: PRIVACY POLICY ================= -->
+        <div id="content-privacy" class="tab-content space-y-8">
+            <div class="font-mono text-[11px] text-zinc-500 border-b border-zinc-900 pb-4 flex justify-between items-center">
+                <span>REVISION_REF // 2026.02.14</span>
+                <span class="text-neon">// ZERO-LOG DATA LAYER</span>
+            </div>
+
+            <!-- Block 1 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-neon"></div>
+                <div class="flex items-center gap-3 font-mono text-[10px] text-neon font-bold tracking-wider uppercase">// ANONYMITY CONFIG 01</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">1. Anonymized Data Framework</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Gmarket Grip operations deploy an absolute zero-profile interface protocol. We discard traditional user registry schemas—no permanent accounts, verified mail matrices, or user credentials are mapped or stored within our operational stack.
+                </p>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// ANONYMITY CONFIG 02</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">2. Excluded Parameters</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Our execution engines specifically bypass the collection of:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 font-mono text-xs text-zinc-400 pt-2">
+                    <div class="border border-zinc-900 p-3 bg-black/40"><span class="text-red-500 font-bold">[X]</span> Identity profiles & Mail addresses</div>
+                    <div class="border border-zinc-900 p-3 bg-black/40"><span class="text-red-500 font-bold">[X]</span> Permanent IP Tracking Records</div>
+                    <div class="border border-zinc-900 p-3 bg-black/40"><span class="text-red-500 font-bold">[X]</span> Persistent Marketing/Tracking Cookies</div>
+                    <div class="border border-zinc-900 p-3 bg-black/40"><span class="text-red-500 font-bold">[X]</span> Real-world billing data links</div>
+                </div>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// ANONYMITY CONFIG 03</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">3. Third-Party Gateway Protocols</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Financial allocations are routed isolatedly through independent transaction layers to shield user metadata:
+                </p>
+                <ul class="list-none space-y-3 font-mono text-xs text-zinc-400 pl-2">
+                    <li><span class="text-neon">&gt; CRYPTO_NETWORKS:</span> Direct peer-to-peer wallet routing via zero-KYC paths.</li>
+                    <li><span class="text-neon">&gt; VOUCHER_ASSETS (Paysafecard):</span> Manual token processing passing through standard numeric authorization masks.</li>
+                    <li><span class="text-neon">&gt; BANK_RAILS (PayPal / Card):</span> Secure tokens externalized straight to payment gateway frameworks. Gmarket never processes or interfaces with card matrix structures.</li>
+                </ul>
+            </div>
+
+            <!-- Block 4 -->
+            <div class="border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/20 transition-all duration-300 group rounded-sm">
+                <div class="flex items-center gap-3 font-mono text-[10px] text-zinc-500 font-bold tracking-wider uppercase">// ANONYMITY CONFIG 04</div>
+                <h3 class="font-racing text-xl font-bold text-white uppercase tracking-wide group-hover:text-neon transition-colors">4. Volatile Host Server Logs</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Standard infrastructure diagnostics (temporary network paths, system handshakes) exist strictly in highly volatile container storage matrices to mitigate DDoS structural strikes. This structural data undergoes forced erasure sequences automatically at prompt termination limits.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER WITH SOCIALS -->
+    <footer class="border-t border-zinc-900 bg-zinc-950 py-12 px-6 relative z-10">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="text-xs text-zinc-600 font-mono tracking-widest uppercase">
+                &copy; 2026 Gmarket. All Rights Reserved. // LOGIC_CENTER
+            </span>
+            <div class="flex space-x-6 text-zinc-500 text-xl">
+                <a href="https://youtube.com" target="_blank" class="hover:text-neon transition duration-300 transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.com" target="_blank" class="hover:text-neon transition duration-300 transform hover:scale-110"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION & TAB TOGGLE ENGINE -->
+    <script>
+    function switchTab(tabName) {
+      const btnTerms = document.getElementById('btn-terms');
+      const btnPrivacy = document.getElementById('btn-privacy');
+      const contentTerms = document.getElementById('content-terms');
+      const contentPrivacy = document.getElementById('content-privacy');
+      const mainTitle = document.getElementById('main-title');
+
+      // Reset base layout classes for Grip buttons style
+      btnTerms.className = "px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 text-zinc-500 hover:text-white font-racing";
+      btnPrivacy.className = "px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 text-zinc-500 hover:text-white font-racing";
+
+      contentTerms.classList.remove('active');
+      contentPrivacy.classList.remove('active');
+
+      if(tabName === 'terms') {
+        btnTerms.className = "px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 bg-neon text-black font-racing shadow-neon";
+        contentTerms.classList.add('active');
+        mainTitle.innerHTML = 'TERMS OF <span class="text-neon drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]">SERVICE.</span>';
+        document.title = "Terms of Service // Gmarket Grip";
+      } else {
+        btnPrivacy.className = "px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 bg-neon text-black font-racing shadow-neon";
+        contentPrivacy.classList.add('active');
+        mainTitle.innerHTML = 'PRIVACY <span class="text-neon drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]">POLICY.</span>';
+        document.title = "Privacy Policy // Gmarket Grip";
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>

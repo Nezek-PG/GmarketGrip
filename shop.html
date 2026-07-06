@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmarket Shop</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img/logo.webp">
+    <script src="./dev.js"></script>
+    
+    <style>
+        body { font-family: 'JetBrains Mono', monospace; background-color: #050506; }
+        .font-racing { font-family: 'Orbitron', sans-serif; }
+        .text-neon { color: #d4ff00; }
+        .bg-neon { background-color: #d4ff00; }
+        .border-neon { border-color: #d4ff00; }
+        .shadow-neon { box-shadow: 0 0 20px rgba(212, 255, 0, 0.2); }
+        .shadow-neon-intense { box-shadow: 0 0 35px rgba(212, 255, 0, 0.5); }
+
+        .slide-img {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+        }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen flex flex-col justify-between selection:bg-neon selection:text-black relative">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md px-6 py-4 flex justify-between items-center z-40">
+        <a href="index.html" class="font-racing text-2xl font-black tracking-wider text-white hover:text-neon transition">
+            GRIP<span class="text-neon">//</span>LOGIC
+        </a>
+    </nav>
+
+    <!-- SHOPPING WORKSPACE CONTAINER -->
+    <!-- ZMIANA: Zmieniono max-w-5xl na max-w-7xl dla maksymalnego poszerzenia całej sekcji roboczej -->
+    <main class="container mx-auto px-6 py-12 flex-grow flex items-center justify-center z-10">
+        <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Side: Interactive Gallery & Asset Details -->
+            <div class="md:col-span-8 space-y-6">
+                <!-- IMAGE SLIDER -->
+                <div class="border border-zinc-800 bg-zinc-950 rounded-lg overflow-hidden relative group shadow-2xl">
+                    <div class="absolute top-3 left-3 z-20 font-mono text-[9px] text-neon bg-black/80 px-2 py-0.5 border border-neon/20 uppercase tracking-widest rounded-sm">
+                        VISUAL_STREAM // CORE_PREVIEW
+                    </div>
+                    
+                    <!-- ZMIANA: Podniesiono wysokość na md:h-[520px] ze względu na szeroki kadr panoramiczny -->
+                    <div class="relative h-80 md:h-[520px] w-full overflow-hidden flex items-center justify-center bg-zinc-900/50">
+                        <img id="slide1" src="img/U1.webp" class="slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100" alt="Preview 1">
+                        <img id="slide2" src="img/U2.webp" class="slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0" alt="Preview 2">
+                    </div>
+
+                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
+                        <i class="fa-solid fa-chevron-left text-sm"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </button>
+
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                        <span id="dot1" class="w-6 h-1 bg-neon rounded-full transition-all duration-300"></span>
+                        <span id="dot2" class="w-2 h-1 bg-zinc-700 rounded-full transition-all duration-300"></span>
+                    </div>
+                </div>
+
+                <!-- Asset Details Pack -->
+              <!-- Asset Details Pack (Zaktualizowany Nowoczesny Opis Produktu) -->
+<!-- Asset Details Pack (Animated & English Version) -->
+                <div class="border border-zinc-800 bg-zinc-950 p-6 rounded-lg space-y-6 shadow-xl transition-all duration-500 hover:border-zinc-700">
+                    
+                    <!-- HEADER SECTION WITH ANIMATED BADGE -->
+                    <div class="flex justify-between items-start border-b border-zinc-900 pb-4">
+                        <div>
+                            <span class="text-neon text-[10px] uppercase font-bold tracking-widest block animate-pulse">// SYSTEM_STATUS: OPERATIONAL</span>
+                            <h1 class="font-racing text-2xl font-black text-white uppercase tracking-tight mt-1">Logic Grip </h1>
+                        </div>
+                        <!-- Animated glowing badge -->
+                        <div class="bg-neon/10 border border-neon text-[10px] font-mono text-neon font-bold uppercase tracking-wider px-3 py-1 rounded animate-[pulse_2s_infinite] shadow-[0_0_15px_rgba(212,255,0,0.3)]">
+                            Private Build
+                        </div>
+                    </div>
+
+                    <!-- MAIN DESCRIPTION -->
+                    <p class="text-zinc-400 text-xs leading-relaxed font-mono">
+                        Exclusive, fully optimized software engineered for peak precision and absolute security. Each license generates a unique code signature (Private Cheat), ensuring full independence and complete infrastructure protection against mass detections.
+                    </p>
+
+                    <!-- TECHNICAL SPECIFICATIONS GRID WITH STAGGERED HOVER ANIMATIONS -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        
+                        <!-- Windows 10/11 -->
+                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                            <i class="fa-brands fa-windows text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                            <div class="space-y-0.5">
+                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Compatibility</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">Windows 10 / Windows 11</span>
+                            </div>
+                        </div>
+
+                        <!-- Easy Setup -->
+                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                            <i class="fa-solid fa-sliders text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                            <div class="space-y-0.5">
+                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Setup Process</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">Simple 1-click installation</span>
+                            </div>
+                        </div>
+
+                        <!-- Undetected -->
+                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                            <i class="fa-solid fa-user-secret text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                            <div class="space-y-0.5">
+                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Security Core</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">Undetected by telemetry telemetry streams</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Control -->
+                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                            <i class="fa-solid fa-mobile-screen-button text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                            <div class="space-y-0.5">
+                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Mobile Web-Radar</span>
+                                <span class="text-[10px] text-zinc-500 font-mono">On-the-fly config via Smartphone (QR)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- FEATURE HIGHLIGHT: STREAM PROOF (WITH GLOW & HOVER EFFECTS) -->
+                    <div class="border border-neon/20 bg-neon/[0.02] p-4 rounded-md flex items-center justify-between transition-all duration-300 hover:border-neon/40 hover:bg-neon/[0.04] shadow-[inset_0_0_15px_rgba(212,255,0,0.02)] hover:shadow-[0_0_20px_rgba(212,255,0,0.05)]">
+                        <div class="flex items-center space-x-3">
+                            <!-- Glowing pulsating dot -->
+                            <div class="w-2 h-2 bg-neon rounded-full animate-ping absolute"></div>
+                            <div class="w-2 h-2 bg-neon rounded-full relative"></div>
+                            
+                            <div class="space-y-0.5">
+                                <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Stream Proof Technology</span>
+                                <span class="text-[10px] text-zinc-400 font-mono">Overlay completely invisible on OBS, Discord, and raw stream captures.</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-video-slash text-zinc-700 text-base hidden sm:block"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Checkout Form Engine -->
+            <div class="md:col-span-4 border border-zinc-800 bg-[#090a0c] p-6 rounded-lg space-y-5 shadow-2xl relative">
+                <div class="text-center space-y-1">
+                    <h3 class="font-racing text-lg font-bold text-white uppercase">Secure Settlement</h3>
+                    <p class="text-zinc-500 text-[10px] uppercase font-mono">Select Crypto Protocol</p>
+                </div>
+
+                <!-- LICENSE SELECTION -->
+                <div class="space-y-2">
+                    <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">1. Selected License Term</span>
+                    <div class="border border-neon bg-neon/5 p-4 rounded flex justify-between items-center">
+                        <div class="space-y-0.5">
+                            <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Lifetime Access</span>
+                            <span class="text-[10px] text-zinc-400 font-mono">Unlimited future updates</span>
+                        </div>
+                        <span class="text-sm text-neon font-mono font-black tracking-tight">$240.00 USD</span>
+                    </div>
+                </div>
+
+                <!-- CRYPTO OPTIONS -->
+                <div class="space-y-2">
+                    <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">2. Settlement Network</span>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="border border-neon bg-neon/5 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer transition" id="crypto-btc">
+                            <i class="fa-brands fa-bitcoin text-amber-500 text-base mb-1"></i>
+                            <span class="text-[10px] font-bold text-white font-mono">BTC</span>
+                            <input type="radio" name="crypto" value="BTC" checked onclick="selectCrypto('BTC')" class="hidden">
+                        </label>
+                        <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-eth">
+                            <i class="fa-brands fa-ethereum text-indigo-400 text-base mb-1"></i>
+                            <span class="text-[10px] font-bold text-zinc-400 font-mono">ETH</span>
+                            <input type="radio" name="crypto" value="ETH" onclick="selectCrypto('ETH')" class="hidden">
+                        </label>
+                        <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-ltc">
+                            <i class="fa-solid fa-coins text-sky-400 text-base mb-1"></i>
+                            <span class="text-[10px] font-bold text-zinc-400 font-mono">LTC</span>
+                            <input type="radio" name="crypto" value="LTC" onclick="selectCrypto('LTC')" class="hidden">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- PRICING SUMMARY -->
+                <div class="bg-zinc-900/30 border border-zinc-900 p-4 rounded space-y-1 font-mono text-xs">
+                    <div class="flex justify-between">
+                        <span class="text-zinc-500">Asset Pack:</span>
+                        <span class="text-zinc-300 font-bold">ACC_GRIP_SPA // LIFETIME</span>
+                    </div>
+                    <div class="border-t border-zinc-900 mt-2 pt-2 flex justify-between font-bold text-sm">
+                        <span class="text-white">Price Due:</span>
+                        <span class="text-neon" id="summary-crypto-value"><i class="fa-solid fa-circle-notch animate-spin text-[10px]"></i> Loading...</span>
+                    </div>
+                </div>
+
+                <!-- TERMS OF SERVICE AGREEMENT -->
+                <div class="flex items-start space-x-2 pt-1">
+                    <input type="checkbox" id="tosCheck" class="accent-neon mt-0.5 cursor-pointer">
+                    <label for="tosCheck" class="text-[10px] font-mono text-zinc-500 leading-tight cursor-pointer select-none">
+                        I acknowledge the system protocols and agree to the <a href="term.html" class="text-neon hover:underline">Terms of Service</a>.
+                    </label>
+                </div>
+
+                <!-- AUTHORIZE BUTTON -->
+                <button onclick="processTransaction()" class="w-full bg-neon text-black font-racing font-bold text-xs uppercase tracking-widest py-4 shadow-neon hover:shadow-neon-intense transition flex items-center justify-center space-x-2 cursor-pointer">
+                    <span>Authorize Transaction</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- IN-PAGE PAYMENT WINDOW MODAL -->
+    <div id="paymentModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
+        <div class="w-full max-w-md border border-zinc-800 bg-[#090a0c] p-6 rounded-xl space-y-5 shadow-[0_0_50px_rgba(212,255,0,0.1)] relative">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-500 hover:text-white transition cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- TOP SEGMENT -->
+            <div class="text-center border-b border-zinc-900 pb-4 space-y-1">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">// Calculated Node Settlement</span>
+                <div class="text-2xl font-black text-white font-racing tracking-wide">$240.00 USD</div>
+                <div class="text-base font-mono text-neon font-bold tracking-tight" id="modal-crypto-amount">---</div>
+                
+                <div class="flex items-center justify-center space-x-1.5 font-mono text-[9px] text-zinc-500 pt-1">
+                    <span>Live Market Rate:</span>
+                    <span class="text-emerald-400" id="modal-live-rate">Fetching...</span>
+                </div>
+            </div>
+
+            <!-- WALLET LAYOUT -->
+            <div class="space-y-2">
+                <label class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block font-bold">Transfer Target Wallet</label>
+                <div class="bg-zinc-950 border border-zinc-900 p-3 rounded-md flex items-center justify-between font-mono text-xs">
+                    <span class="text-zinc-400 break-all select-all pr-2" id="modal-wallet-address">---</span>
+                    <button onclick="copyWallet()" class="text-neon hover:text-white transition px-2 py-1 bg-neon/10 rounded border border-neon/20 cursor-pointer text-[10px] font-bold uppercase tracking-wider">Copy</button>
+                </div>
+            </div>
+
+            <!-- DISCORD INTEGRATION -->
+            <div class="border-t border-zinc-900 pt-4 flex flex-col items-center space-y-3">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">Awaiting Block Confirmation?</span>
+                <a href="https://discord.gg/yvB9xfdDt5" target="_blank" class="w-full bg-[#5865F2]/10 hover:bg-[#5865F2] text-[#5865F2] hover:text-white border border-[#5865F2]/30 p-3 rounded-md transition duration-300 flex items-center justify-center space-x-3 font-mono text-xs font-bold">
+                    <i class="fa-brands fa-discord text-base"></i>
+                    <span>Contact Support via Discord</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-900 bg-zinc-950 py-8 px-6 z-40">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono tracking-widest uppercase text-zinc-600">
+            <span>&copy; 2026 GRIP//LOGIC. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- LOGIC ENGINE -->
+    <script>
+        let currentSlideIndex = 1;
+        function updateGalleryUI() {
+            const s1 = document.getElementById('slide1');
+            const s2 = document.getElementById('slide2');
+            const d1 = document.getElementById('dot1');
+            const d2 = document.getElementById('dot2');
+            if(currentSlideIndex === 1) {
+                s1.className = "slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100";
+                s2.className = "slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0";
+                d1.className = "w-6 h-1 bg-neon rounded-full transition-all duration-300";
+                d2.className = "w-2 h-1 bg-zinc-700 rounded-full transition-all duration-300";
+            } else {
+                s1.className = "slide-img absolute inset-0 w-full h-full object-cover brightness-90 -translate-x-full opacity-0";
+                s2.className = "slide-img absolute inset-0 w-full h-full object-cover translate-x-0 opacity-100";
+                d1.className = "w-2 h-1 bg-zinc-700 rounded-full transition-all duration-300";
+                d2.className = "w-6 h-1 bg-neon rounded-full transition-all duration-300";
+            }
+        }
+        function nextSlide() { currentSlideIndex = currentSlideIndex === 1 ? 2 : 1; updateGalleryUI(); }
+        function prevSlide() { currentSlideIndex = currentSlideIndex === 2 ? 1 : 2; updateGalleryUI(); }
+
+        const cryptoWallets = {
+            'BTC': 'bc1qjuhwe6xxsft87kdhyx7rrk9nffz4jrrh5d4ww6',
+            'ETH': '0xAbFAD7cA0DbE5B750f479540C33d99f67bc358b7',
+            'LTC': 'LfFzQDdZ324nvz4YzTBKwdmSJK3gCQPYhV'
+        };
+
+        let selectedCryptoAsset = 'BTC';
+        const baseUsd = 240;
+        let cachedRates = null;
+
+        async function fetchLiveRates() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin&vs_currencies=usd');
+                const data = await response.json();
+                cachedRates = {
+                    'BTC': data.bitcoin.usd,
+                    'ETH': data.ethereum.usd,
+                    'LTC': data.litecoin.usd
+                };
+                calculatePricing();
+            } catch (error) {
+                console.error("API Error. Falling back to dynamic baseline context parameters.", error);
+                cachedRates = { 'BTC': 62430, 'ETH': 1760, 'LTC': 44 };
+                calculatePricing();
+            }
+        }
+
+        function selectCrypto(asset) {
+            selectedCryptoAsset = asset;
+            ['BTC', 'ETH', 'LTC'].forEach(item => {
+                const node = document.getElementById(`crypto-${item.toLowerCase()}`);
+                if(item === asset) {
+                    node.className = "border border-neon bg-neon/5 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer transition";
+                    node.querySelector('span').className = "text-[10px] font-bold text-white font-mono";
+                } else {
+                    node.className = "border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition";
+                    node.querySelector('span').className = "text-[10px] font-bold text-zinc-400 font-mono";
+                }
+            });
+            calculatePricing();
+        }
+
+        function calculatePricing() {
+            if (!cachedRates) return;
+            
+            const activeRate = cachedRates[selectedCryptoAsset];
+            const cryptoCalculatedAmount = (baseUsd / activeRate).toFixed(5);
+
+            document.getElementById('summary-crypto-value').innerText = `${cryptoCalculatedAmount} ${selectedCryptoAsset}`;
+            
+            document.getElementById('modal-crypto-amount').innerText = `${cryptoCalculatedAmount} ${selectedCryptoAsset}`;
+            document.getElementById('modal-live-rate').innerText = `$${activeRate.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('modal-wallet-address').innerText = cryptoWallets[selectedCryptoAsset];
+        }
+
+        function processTransaction() {
+            if(!document.getElementById('tosCheck').checked) {
+                alert("Authorization Denied. Please accept the Terms of Service protocol.");
+                return;
+            }
+            calculatePricing();
+            const modal = document.getElementById('paymentModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('paymentModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function copyWallet() {
+            const text = document.getElementById('modal-wallet-address').innerText;
+            navigator.clipboard.writeText(text);
+            alert("Wallet reference string saved to clipboard.");
+        }
+
+        fetchLiveRates();
+    </script>
+</body>
+</html>

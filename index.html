@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmarket Grip</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./img/logo.webp">
+    <script src="./dev.js" defer></script>
+    <style>
+     
+    </style>
+</head>
+<body class="text-gray-300 overflow-x-hidden selection:bg-neon selection:text-black hud-scanline">
+
+    <!-- NAVIGATION -->
+    <nav class="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3 group cursor-pointer">
+            <span class="font-racing text-2xl font-black tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">GRIP<span class="text-neon">//</span>LOGIC</span>
+        </div>
+      
+        <a href="shop.html" class="border border-neon bg-neon/5 hover:bg-neon hover:text-black px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-neon hover:shadow-neon-intense flex items-center space-x-2 transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Access Shop</span>
+        </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050506] via-[#050506]/90 to-transparent z-10"></div>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-5 space-y-6 opacity-0 animate-fade-in">
+                <div class="inline-flex items-center space-x-2 border border-neon/30 bg-neon/5 px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-neon rounded-sm animate-subtle-pulse">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon animate-ping"></span>
+                    <span>Assetto Corsa Competizione Better Grip</span>
+                </div>
+                <h1 class="font-racing text-5xl md:text-7xl font-black tracking-tight text-white leading-none">
+                    MAXIMUM<br><span class="text-neon tracking-wide drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]">CONTACT.</span>
+                </h1>
+                <p class="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed border-l border-zinc-800 pl-4">
+                    Eliminate variable track deviations. Force dynamic downforce equilibrium. Experience absolute, unyielding tyre traction profiles mapped directly from live track nodes.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#telemetry" class="bg-neon text-black font-racing font-bold text-xs uppercase tracking-widest px-8 py-4 shadow-neon hover:shadow-neon-intense transition duration-300 transform hover:scale-105">
+                        Analyze Telemetry
+                    </a>
+                    <a href="shop.html" class="border border-zinc-700 hover:border-neon/50 font-racing font-bold text-xs uppercase tracking-widest px-8 py-4 transition duration-300 bg-zinc-900/20 hover:text-white">
+                        View Grip
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Hero Viewport Showcase -->
+            <div class="lg:col-span-7 relative flex justify-center items-center opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="relative w-full max-w-2xl overflow-hidden border border-zinc-800 bg-zinc-900/10 rounded-lg p-2 group shadow-2xl transition-all duration-500 hover:border-neon/30" id="carPerspectiveWrapper">
+                    <div class="absolute top-4 left-4 z-30 font-mono text-[9px] text-neon bg-black/80 px-2 py-1 border border-neon/20 uppercase tracking-widest rounded-sm pointer-events-none">SYS_CAM // APEX_LOCK</div>
+                    
+                    <div class="relative w-full overflow-hidden rounded-md" id="carPerspectiveImage" style="transition: transform 0.1s ease-out;">
+                        <img src="https://racingnewsworldwide.com/wp-content/uploads/2023/04/eight-bmw-m4-gt3s-at-gt-world-challenge-europe-season-opener-at-monza_644118d70ec5a.jpeg" alt="BMW M4 GT3 Matrix" class="w-full h-auto object-cover filter brightness-[0.85] contrast-[1.1] transition-all duration-700 group-hover:scale-105 group-hover:brightness-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-40"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 01: PHYSICS -->
+    <section id="physics" class="py-24 border-t border-zinc-900 bg-zinc-950/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mb-16 reveal-element">
+                <span class="text-neon font-bold text-xs uppercase tracking-widest block mb-2">// Mechanical Physics Architecture</span>
+                <h2 class="font-racing text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Contact Patch Equation</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal-element delay-100 border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group rounded-md">
+                    <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">01</div>
+                    <h3 class="font-racing text-lg font-bold text-white uppercase group-hover:text-neon transition-colors">Slip Angle Optimization</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Aligning the chassis rotational axis explicitly with optimal lateral tyre displacement parameters to maintain max velocity mid-corner.</p>
+                </div>
+                <div class="reveal-element delay-200 border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group rounded-md">
+                    <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">02</div>
+                    <h3 class="font-racing text-lg font-bold text-white uppercase group-hover:text-neon transition-colors">Thermal Equilibrium</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Preventing surface-layer micro-slipping ensuring core carcass temperatures hold uniform across long-stint endurance cycles.</p>
+                </div>
+                <div class="reveal-element delay-300 border border-zinc-800 bg-zinc-900/10 p-8 space-y-4 hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group rounded-md">
+                    <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">03</div>
+                    <h3 class="font-racing text-lg font-bold text-white uppercase group-hover:text-neon transition-colors">Dynamic Damper Control</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Absorbing violent high-frequency track imperfections seamlessly, preventing the tyre tire footprint from lifting off tarmac matrices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 02: TELEMETRY ENGINE -->
+    <section id="telemetry" class="py-24 border-t border-zinc-900 bg-[#07080a]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-4 space-y-6 reveal-element">
+                    <span class="text-[#d4ff00] font-bold text-xs uppercase tracking-widest block">// Simulation Tuning Matrix</span>
+                    <h2 class="font-racing text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Grip Analytics</h2>
+                    <div class="bg-zinc-900/40 p-5 border border-zinc-800/80 rounded-md backdrop-blur-sm shadow-xl transition-all duration-300 hover:border-neon/20">
+                        <span class="text-xs font-bold text-zinc-500 block uppercase font-mono tracking-wider">Optimized Pace Target</span>
+                        <span class="text-white font-racing text-4xl font-black text-[#d4ff00] tracking-wider drop-shadow-[0_0_10px_rgba(212,255,0,0.2)]">2:14.342</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Hover across the chart below. Curves have been recalculated with a dynamic offset (+1-4 km/h modification on turn nodes) for optimal slip-angle control.
+                    </p>
+                </div>
+
+                <!-- Telemetry Canvas Box -->
+                <div class="lg:col-span-8 border border-zinc-800/80 bg-zinc-950/70 p-6 rounded-lg shadow-2xl relative overflow-hidden reveal-element delay-200" id="telemetryBox">
+                    <div class="flex justify-between items-center border-b border-zinc-900 pb-4 mb-6 font-mono text-[11px]">
+                        <span class="text-zinc-400 uppercase font-bold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#d4ff00] animate-ping"></span> 
+                            Realtime Grip Assist
+                        </span>
+                        <span class="text-zinc-500">ID: 2103323</span>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 mb-6 bg-zinc-900/20 p-4 border border-zinc-900 rounded-md font-mono text-center">
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-zinc-500 block uppercase tracking-wider">Track Vector</span>
+                            <span id="tel-distance" class="text-white text-xs font-bold">0 m</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-zinc-500 block uppercase tracking-wider">Speed (+Offset)</span>
+                            <span id="tel-speed" class="text-[#d4ff00] text-base font-bold">181 km/h</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-zinc-500 block uppercase tracking-wider">Grip Coefficient</span>
+                            <span class="text-emerald-400 text-xs font-bold">100% Maximum</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pt-2 pb-6 cursor-crosshair group/canvas" id="interactiveCanvas">
+                        <div class="h-36 bg-zinc-900/30 border border-zinc-900 rounded-md relative overflow-hidden flex items-end">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" id="telemetrySvg">
+                                <line x1="0" y1="33" x2="100" y2="33" stroke="#1f2937" stroke-width="0.2" stroke-dasharray="1 3"/>
+                                <line x1="0" y1="66" x2="100" y2="66" stroke="#1f2937" stroke-width="0.2" stroke-dasharray="1 3"/>
+                                
+                                <path d="M 0,42 C 2,38 3,24 5,18 C 6,24 8,55 10,75 C 12,58 15,40 18,30 C 22,20 28,15 32,12 C 33,12 34,25 34,42 C 34.5,55 35,62 36,62 C 37,60 39,52 41,45 C 43,35 44,30 44.5,28 C 45,34 46,55 47,72 C 47.5,72 48,65 49,60 C 51,50 53,40 54,34 C 55,42 56,48 57,48 C 58,42 59,34 60,30 C 61,25 62,22 63,22 C 64.5,35 65.5,50 66,58 C 68,50 70,36 71,28 C 71.5,35 72,42 73,42 C 74,40 75,50 76,60 C 77,58 78,54 79,52 C 82,42 85,30 89,22 C 92,15 93.5,12 94.5,12 C 95.5,25 96,60 97,78 C 97.5,78 98,72 98.5,68 C 99,55 99.5,48 100,42" 
+                                      fill="none" stroke="#d4ff00" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+                                
+                                <line id="sliderIndicator" x1="0" y1="0" x2="0" y2="100" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="2 2" opacity="0" class="transition-opacity duration-150 group-hover/canvas:opacity-100"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 03: HERO MATRIX -->
+    <section class="py-24 bg-[#050608] border-t border-zinc-900 relative overflow-hidden" id="interactiveHeroContainer">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left Info Panel & High-Response Buttons -->
+                <div class="space-y-6 reveal-element">
+                    <span class="text-[#d4ff00] font-mono text-xs uppercase tracking-widest block flex items-center gap-2">
+                        <span class="inline-block w-4 h-[1px] bg-[#d4ff00]"></span> // Premium Asset Framework
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase font-racing leading-none tracking-tight">
+                        Dominate the lobby <br>with <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">Grip<span style="color: #d4ff00;">//</span><span style="color: white;">LOGIC</span> </span>
+                    </h2>
+                    
+                    <!-- Dynamic Text Area with crossfade bounds -->
+                    <div class="bg-zinc-950/60 border border-zinc-900 p-5 rounded-md min-h-[76px] flex items-center shadow-inner relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 h-full w-[2px] bg-[#d4ff00]"></div>
+                        <p id="dynamic-description-text" class="text-zinc-400 text-sm font-mono leading-relaxed transition-all duration-300 transform translate-x-0 opacity-100">
+                            Bypass track time limits and validation checks, physics boundaries, and simulation limit mechanics flawlessly with our hyper-optimized execution layer.
+                        </p>
+                    </div>
+                    
+                    <!-- Animated Selection Stack -->
+                    <div class="space-y-3 pt-2">
+                        <button onclick="switchFeatureDescription(0, this)" class="feature-tab-btn active w-full text-left flex items-center justify-between p-4 bg-zinc-950 border border-zinc-900 rounded-md outline-none group cursor-pointer transition-all duration-300 hover:border-zinc-700">
+                            <div class="flex items-center gap-4">
+                                <div class="dot-indicator w-2 h-2 rounded-full bg-[#d4ff00] transition-all duration-300 group-hover:scale-125"></div>
+                                <span class="text-xs font-mono text-white tracking-wide transition-colors group-hover:text-white">Constant Micro-Updates & Adapters</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest font-bold text-[#d4ff00]">// SELECT</span>
+                        </button>
+                        
+                        <button onclick="switchFeatureDescription(1, this)" class="feature-tab-btn w-full text-left flex items-center justify-between p-4 bg-zinc-950 border border-zinc-900 rounded-md outline-none group cursor-pointer transition-all duration-300 hover:border-zinc-700">
+                            <div class="flex items-center gap-4">
+                                <div class="dot-indicator w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 group-hover:scale-125"></div>
+                                <span class="text-xs font-mono text-zinc-400 tracking-wide transition-colors group-hover:text-white">Supports all systems versions natively</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest font-bold text-[#d4ff00]">// SELECT</span>
+                        </button>
+                        
+                        <button onclick="switchFeatureDescription(2, this)" class="feature-tab-btn w-full text-left flex items-center justify-between p-4 bg-zinc-950 border border-zinc-900 rounded-md outline-none group cursor-pointer transition-all duration-300 hover:border-zinc-700">
+                            <div class="flex items-center gap-4">
+                                <div class="dot-indicator w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 group-hover:scale-125"></div>
+                                <span class="text-xs font-mono text-zinc-400 tracking-wide transition-colors group-hover:text-white">State-of-the-art memory bypasses</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest font-bold text-[#d4ff00]">// SELECT</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Dynamic 3D Interlocking Ring Logo Space -->
+                <div class="relative flex justify-center items-center h-[400px] reveal-element delay-200" id="logoPerspectiveField">
+                    <!-- Inner Glow Ring -->
+                    <div class="absolute w-80 h-80 rounded-full border border-[#d4ff00]/10 animate-pulse"></div>
+                    <!-- Clockwise Outer Tech Ring -->
+                    <div class="absolute w-72 h-72 rounded-full border-2 border-dashed border-zinc-800/40 border-t-[#d4ff00]/30 border-b-[#d4ff00]/30 animate-orbit-clockwise"></div>
+                    <!-- Counter-Clockwise Center Dot Ring -->
+                    <div class="absolute w-60 h-60 rounded-full border border-dotted border-zinc-700/60 border-l-[#d4ff00]/40 border-r-[#d4ff00]/40 animate-orbit-counter"></div>
+                    
+                    <!-- Central Reacting Emblem -->
+                    <div id="kineticLogo" class="w-24 h-24 bg-zinc-950 border border-zinc-800 rounded-2xl flex items-center justify-center shadow-2xl relative z-10 transition-all duration-300 ease-out animate-pulse-glow group cursor-pointer">
+                        <div class="absolute inset-0.5 rounded-xl border border-zinc-900 bg-gradient-to-b from-zinc-900 to-black z-0"></div>
+                        <span class="text-white text-4xl font-black tracking-tighter relative z-10 transition-all duration-500 group-hover:text-[#d4ff00] group-hover:scale-110">G</span>
+                        <!-- Decorative HUD sub-brackets inside box -->
+                        <div class="absolute top-1 left-1 w-1.5 h-1.5 border-t border-l border-zinc-700 group-hover:border-[#d4ff00] transition-colors"></div>
+                        <div class="absolute bottom-1 right-1 w-1.5 h-1.5 border-b border-r border-zinc-700 group-hover:border-[#d4ff00] transition-colors"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 04: ENHANCED LARGE DUAL-SCREEN WORKSPACE WITH SYNCHRONIZED CYBER EFFECTS -->
+    <!-- SECTION 04: ENHANCED LARGE DUAL-SCREEN WORKSPACE WITH SYNCHRONIZED CYBER EFFECTS -->
+<section class="py-24 bg-[#07080a] border-t border-zinc-900 relative overflow-hidden">
+    <!-- Tło: Subtelna siatka wektorowa -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#d4ff00 1px, transparent 1px), linear-gradient(90deg, #d4ff00 1px, transparent 1px); background-size: 45px 45px;"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Lewa strona: Tekst i opis -->
+            <div class="lg:col-span-4 space-y-6 reveal-element">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900/80 border border-zinc-800 rounded text-[10px] font-mono uppercase tracking-wider text-zinc-300">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4ff00] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#d4ff00]"></span>
+                    </span>
+                    Cross-Platform Interface
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white uppercase font-racing tracking-tight leading-none">
+                    Cleanest<br/>GUI Framework
+                </h2>
+                <p class="text-zinc-400 text-sm leading-relaxed font-mono max-w-sm">
+                    Minimal runtime draw parameters optimized directly for low latency injection layers. Universal layout compatibility across PC and mobile environments.
+                </p>
+                <div class="pt-2">
+             
+                </div>
+            </div>
+            
+            <!-- Prawa strona: Dwa nakładające się ekrany 3D z prawdziwymi zdjęciami -->
+            <div class="lg:col-span-8 flex justify-center items-center pt-10 lg:pt-0 reveal-element delay-200">
+                
+                <div class="relative w-full max-w-[680px] h-[480px] group" style="perspective: 3000px;">
+                    
+                    <!-- EKRAN 1: DESKTOP -->
+                    <div class="absolute top-0 left-0 w-[82%] bg-zinc-950 border border-zinc-800 rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] transition-all duration-700 transform rotate-x-6 rotate-y-[-12deg] group-hover:rotate-x-3 group-hover:rotate-y-[-6deg] overflow-hidden z-10 group-hover:border-[#d4ff00]/20">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#d4ff00]/40 to-transparent cyber-scanline pointer-events-none z-30"></div>
+
+                        <div class="bg-zinc-900/80 px-4 py-2.5 flex items-center justify-between border-b border-zinc-800/80 relative">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-red-500/40"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-500/40"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-500/40"></span>
+                                <span class="ml-2 font-mono text-[9px] text-zinc-400 uppercase tracking-wider font-bold">DESKTOP_CLIENT.EXE</span>
+                            </div>
+                        </div>
+                        
+                        <div class="relative bg-zinc-950 p-1.5">
+                            <img 
+                                src="/img/guipc.webp" 
+                                alt="Grip Logic Desktop Interface" 
+                                class="w-full h-auto block rounded-lg filter brightness-[0.75] saturate-[0.85] group-hover:saturate-[1.05] group-hover:brightness-[0.95] group-hover:scale-[1.005] transition-all duration-700"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- EKRAN 2: MOBILE -->
+                    <div class="absolute bottom-[-15px] right-0 w-[240px] bg-zinc-950 border border-zinc-800 rounded-[28px] shadow-[0_25px_60px_rgba(0,0,0,0.95)] transition-all duration-700 transform rotate-x-6 rotate-y-[-12deg] translate-z-10 group-hover:rotate-x-3 group-hover:rotate-y-[-6deg] group-hover:translate-x-[-15px] group-hover:border-[#d4ff00]/40 overflow-hidden z-20">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#d4ff00]/70 to-transparent cyber-scanline pointer-events-none z-30"></div>
+                        
+                        <div class="bg-zinc-900/90 px-5 py-3 flex justify-between items-center border-b border-zinc-800/80 font-mono text-[8px] text-zinc-400">
+                            <span class="font-bold tracking-wider">MOBILE_CLIENT.EXE</span>
+                            <span class="text-[#d4ff00] font-bold animate-pulse bg-[#d4ff00]/10 px-1.5 py-0.5 rounded border border-[#d4ff00]/20 text-[7px]">LIVE</span>
+                        </div>
+                        
+                        <div class="relative bg-zinc-950 p-1.5 h-[320px] overflow-hidden">
+                            <!-- Zdjęcie dopasowane kadrowaniem do ekranu telefonu (pionowe skupienie) -->
+                            <img 
+                                src="/img/gui.webp" 
+                                alt="Grip Mobile Controller Interface" 
+                                class="h-full w-auto max-w-none block object-cover rounded-[20px] filter brightness-[0.7] saturate-[0.9] group-hover:saturate-[1.10] group-hover:brightness-[0.9] group-hover:scale-[1.02] transition-all duration-700"
+                                style="transform: translateX(+28%);"
+                            />
+                            <!-- Gradient maskujący dół długiego zdjęcia pionowego -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <!-- Główny blask pod całą makietą 3D -->
+                    <div class="absolute -bottom-6 left-1/4 w-2/3 h-8 bg-[#d4ff00]/5 blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- FLOATING FEATURE CARDS -->
+    <section class="py-24 bg-[#050608] border-t border-zinc-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="reveal-element p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-[#d4ff00]/30 transition-all duration-300 animate-float-card">
+                    <div class="text-[#d4ff00] text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon"></span>// Personalizable
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Our execution parameters can be adjusted via real-time profiling slots based explicitly on your target platform track layouts.</p>
+                </div>
+                <div class="reveal-element delay-100 p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-[#d4ff00]/30 transition-all duration-300 animate-float-card" style="animation-delay: 0.5s;">
+                    <div class="text-[#d4ff00] text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon"></span>// Configurable
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Grip parameters are fully customizable through intuitive dashboard templates to comfortably bypass any automated validation barriers.</p>
+                </div>
+                <div class="reveal-element delay-200 p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-[#d4ff00]/30 transition-all duration-300 animate-float-card" style="animation-delay: 1s;">
+                    <div class="text-[#d4ff00] text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon"></span>// Adaptable
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Engineered to cleanly latch across standard simulator frameworks, guaranteeing undetected and fun time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 05: ABOUT ME -->
+    <section id="aboutme" class="py-24 border-t border-zinc-900 bg-zinc-950/40">
+        <div class="container mx-auto px-6 max-w-3xl text-center space-y-6 reveal-element">
+            <div class="w-20 h-20 rounded-full bg-zinc-900/60 border border-neon/50 mx-auto flex items-center justify-center text-neon shadow-neon transform transition-transform duration-500 hover:rotate-12">
+                <i class="fa-solid fa-helmet-safety text-3xl"></i>
+            </div>
+            <span class="text-neon font-bold text-xs uppercase tracking-widest block">// Driver Profile</span>
+            <h2 class="font-racing text-3xl font-black text-white uppercase">Behind the Telemetry</h2>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xl mx-auto border-t border-b border-zinc-900 py-6">
+                I am a dedicated Assetto Corsa Competizione development specialist and sim racer focused exclusively on extraction profiles of ultimate mechanical grip. By shifting data analytics outside traditional boundary parameters, I formulate custom setup structures built to optimize the tire-to-tarmac contact patch completely.
+            </p>
+        </div>
+    </section>
+    
+    <!-- FOOTER WITH SOCIALS -->
+    <footer class="border-t border-zinc-900 bg-zinc-950 py-12 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="text-xs text-zinc-600 font-mono tracking-widest uppercase">
+                &copy; 2026 Gmarket. All Rights Reserved.
+            </span>
+            <div class="flex space-x-6 text-zinc-500 text-xl">
+                <a href="https://www.timeanddate.com/countdown/launch?iso=20260712T2137&p0=%3A&msg=YouTube&font=cursive&csz=1" target="_blank" class="hover:text-neon transition duration-300 transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.gg/yvB9xfdDt5" target="_blank" class="hover:text-neon transition duration-300 transform hover:scale-110"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION, SCROLL-REVEAL & MOUSE COORD ENGINE -->
+    <script>
+   
+    </script>
+</body>
+</html>

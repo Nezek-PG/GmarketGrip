@@ -1,0 +1,88 @@
+   body { font-family: 'JetBrains Mono', monospace; background-color: #050506; scroll-behavior: smooth; }
+        .font-racing { font-family: 'Orbitron', sans-serif; }
+        .text-neon { color: #d4ff00; }
+        .bg-neon { background-color: #d4ff00; }
+        .border-neon { border-color: #d4ff00; }
+        .shadow-neon { box-shadow: 0 0 20px rgba(212, 255, 0, 0.2); }
+        .shadow-neon-intense { box-shadow: 0 0 35px rgba(212, 255, 0, 0.6); }
+        
+        /* --- SYSTEM ANIMACJI WEJŚCIOWYCH & SCROLL-REVEAL --- */
+        @keyframes customFadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: customFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Klasy bazowe dla Scroll Assist */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+        
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Kaskadowe opóźnienia dla siatek (Grid) */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* --- ZAAWANSOWANE CYBER-ANIMACJE TEMATYCZNE --- */
+        @keyframes orbitClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes orbitCounter {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+        .animate-orbit-clockwise {
+            animation: orbitClockwise 20s linear infinite;
+        }
+        .animate-orbit-counter {
+            animation: orbitCounter 15s linear infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 255, 0, 0.15); border-color: rgba(63, 63, 70, 1); }
+            50% { box-shadow: 0 0 30px rgba(212, 255, 0, 0.4); border-color: #d4ff00; }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float-card {
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        /* Glitch wskaźnika telemetrycznego */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        .animate-subtle-pulse {
+            animation: subtlePulse 2s ease-in-out infinite;
+        }
+
+        /* Scanline Overlay Grid */
+        .hud-scanline::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+            z-index: 40;
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
