@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETUP // LOGIC</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#d4ff00',
+                    },
+                    fontFamily: {
+                        racing: ['Orbitron', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./dev.js"></script>
+    <script src="./index.js"></script>
+    
+    <style>
+        .hud-scanline {
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+        }
+        .cyber-scanline {
+            background: linear-gradient(90deg, transparent, rgba(212, 255, 0, 0.5), transparent);
+            background-size: 200% 100%;
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+    </style>
+</head>
+<body class="text-gray-300 bg-[#050506] font-mono overflow-x-hidden selection:bg-neon selection:text-black hud-scanline">
+
+    <!-- NAVIGATION -->
+    <nav class="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3 group cursor-pointer">
+            <span class="font-racing text-2xl font-black tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">SETUP<span class="text-neon">//</span>LOGIC</span>
+        </div>
+      
+        <div class="border border-neon bg-neon/5 px-5 py-2.5 text-xs font-bold uppercase tracking-widest flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
+            <span class="text-neon">SYSTEM ONLINE</span>
+        </div>
+    </nav>
+
+    <!-- HERO / VIDEO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-[#050506] to-[#07080a]">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#d4ff00 1px, transparent 1px), linear-gradient(90deg, #d4ff00 1px, transparent 1px); background-size: 45px 45px;"></div>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
+            
+            <!-- Left Text Content -->
+            <div class="lg:col-span-4 space-y-6">
+                <div class="inline-flex items-center space-x-2 border border-neon/30 bg-neon/5 px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-neon rounded-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon animate-ping"></span>
+                    <span>Installation Protocol v1.0</span>
+                </div>
+                <h1 class="font-racing text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
+                    OPTIMAL<br><span class="text-neon tracking-wide drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]">SETUP.</span>
+                </h1>
+                <p class="text-zinc-400 text-sm leading-relaxed border-l border-zinc-800 pl-4">
+                    Bypass configuration errors. Initialize the installation sequence by reviewing the visual telemetry feed. Follow the required execution parameters for maximum software stability.
+                </p>
+                <div class="pt-4">
+                    <a href="#parameters" class="bg-neon text-black font-racing font-bold text-xs uppercase tracking-widest px-8 py-4 shadow-[0_0_15px_rgba(212,255,0,0.4)] hover:shadow-[0_0_25px_rgba(212,255,0,0.6)] transition duration-300 transform hover:scale-105 inline-block">
+                        View Required Parameters
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Video Viewport Showcase -->
+            <div class="lg:col-span-8 relative flex justify-center items-center pt-10 lg:pt-0">
+                <div class="relative w-full max-w-[800px] group">
+                    
+                    <!-- Desktop Window Mockup for Video -->
+                    <div class="relative bg-zinc-950 border border-zinc-800 rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden z-10 transition-all duration-500 hover:border-neon/30">
+                        <div class="absolute top-0 left-0 w-full h-[2px] cyber-scanline pointer-events-none z-30"></div>
+
+                        <!-- Fake Window Header -->
+                        <div class="bg-zinc-900/80 px-4 py-2.5 flex items-center justify-between border-b border-zinc-800/80 relative">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-red-500/40"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-500/40"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-500/40"></span>
+                                <span class="ml-2 font-mono text-[9px] text-zinc-400 uppercase tracking-wider font-bold">TUTORIAL_STREAM.MP4</span>
+                            </div>
+                            <span class="text-neon font-mono text-[9px] uppercase tracking-widest animate-pulse border border-neon/20 bg-neon/10 px-2 py-0.5 rounded-sm">SYS_CAM // ACTIVE</span>
+                        </div>
+                        
+                        <!-- Video Element -->
+                        <div class="relative bg-black w-full aspect-video">
+                        <iframe 
+                            class="w-full h-full block filter contrast-[1.05]" 
+                            src="https://www.youtube.com/embed/ATk_YcHWDew" 
+                            title="Tutorial Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                                        
+                    <!-- Under-glow -->
+                    <div class="absolute -bottom-6 left-1/4 w-2/3 h-8 bg-neon/5 blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING FEATURE CARDS (Instructions) -->
+    <section id="parameters" class="py-24 bg-[#050608] border-t border-zinc-900">
+        <div class="container mx-auto px-6">
+            
+            <div class="max-w-2xl mb-12">
+                <span class="text-neon font-bold text-xs uppercase tracking-widest block mb-2">// Execution Parameters</span>
+                <h2 class="font-racing text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Installation Logic</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 mb-4 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">01</div>
+                    <div class="text-white text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2 group-hover:text-neon transition-colors">
+                        Python
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">During the Python installation sequence, you must explicitly check the "Add to PATH" box. This is absolutely critical and the single most important step of the entire setup process to ensure the framework executes correctly.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 mb-4 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">02</div>
+                    <div class="text-white text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2 group-hover:text-neon transition-colors">
+                        Allocate Disk Matrix
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Ensure a minimum of 2GB absolute free storage capacity on your primary disk to allow optimal caching and unpacking of core system assets.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="p-6 bg-zinc-950/40 border border-zinc-900 rounded-lg hover:border-neon/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 mb-4 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-neon font-racing font-bold transition-colors group-hover:border-neon/40">03</div>
+                    <div class="text-white text-sm font-mono uppercase font-bold mb-2 flex items-center gap-2 group-hover:text-neon transition-colors">
+                        Have fun!
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Installation sequence complete. All systems are nominal. You are now cleared for execution—enjoy the program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-900 bg-zinc-950 py-12 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="text-xs text-zinc-600 font-mono tracking-widest uppercase">
+                &copy; 2026 Gmarket
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>
