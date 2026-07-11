@@ -36,185 +36,238 @@
         </a>
     </nav>
 
-    <!-- SHOPPING WORKSPACE CONTAINER -->
-    <!-- ZMIANA: Zmieniono max-w-5xl na max-w-7xl dla maksymalnego poszerzenia całej sekcji roboczej -->
-    <main class="container mx-auto px-6 py-12 flex-grow flex items-center justify-center z-10">
-        <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <main class="container mx-auto px-6 py-12 flex-grow flex items-center justify-center z-10 w-full">
+        
+       
+        <!-- SELECTION VIEW -->
+        <div id="selection-view" class="w-full max-w-5xl mx-auto space-y-12">
+            <div class="text-center space-y-2">
+                <h2 class="font-racing text-3xl font-black text-white uppercase tracking-tight">Select Target Asset</h2>
+                <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest">Initialize loadout sequence for your simulator</p>
+            </div>
             
-            <!-- Left Side: Interactive Gallery & Asset Details -->
-            <div class="md:col-span-8 space-y-6">
-                <!-- IMAGE SLIDER -->
-                <div class="border border-zinc-800 bg-zinc-950 rounded-lg overflow-hidden relative group shadow-2xl">
-                    <div class="absolute top-3 left-3 z-20 font-mono text-[9px] text-neon bg-black/80 px-2 py-0.5 border border-neon/20 uppercase tracking-widest rounded-sm">
-                        VISUAL_STREAM // CORE_PREVIEW
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: AC Speed -->
+                <div class="border border-zinc-800 bg-zinc-950 p-8 rounded-lg shadow-xl hover:border-neon hover:shadow-neon transition-all duration-300 cursor-pointer group relative overflow-hidden" onclick="selectProduct('speed')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-neon/10 blur-2xl group-hover:bg-neon/20 transition"></div>
                     
-                    <!-- ZMIANA: Podniesiono wysokość na md:h-[520px] ze względu na szeroki kadr panoramiczny -->
-                    <div class="relative h-80 md:h-[520px] w-full overflow-hidden flex items-center justify-center bg-zinc-900/50">
-                        <img id="slide1" src="img/U1.webp" class="slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100" alt="Preview 1">
-                        <img id="slide2" src="img/U2.webp" class="slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0" alt="Preview 2">
+                    <!-- MIEJSCE NA ZDJĘCIE - KARTA 1 -->
+                    <div class="w-full h-48 mb-6 rounded-md bg-zinc-900 border border-zinc-800 overflow-hidden relative flex items-center justify-center">
+                        <!-- Podmień 'src' na ścieżkę do Twojego zdjęcia -->
+                        <img src="img/ac.webp" alt="AC Speed" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <!-- Ten tekst zniknie, gdy wgrasz poprawne zdjęcie, służy jako placeholder -->
+                        <span class="absolute text-zinc-700 text-xs font-mono uppercase z-0">Miejsce na zdjęcie</span>
                     </div>
 
-                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
-                        <i class="fa-solid fa-chevron-left text-sm"></i>
-                    </button>
-                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
-                        <i class="fa-solid fa-chevron-right text-sm"></i>
-                    </button>
-
-                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
-                        <span id="dot1" class="w-6 h-1 bg-neon rounded-full transition-all duration-300"></span>
-                        <span id="dot2" class="w-2 h-1 bg-zinc-700 rounded-full transition-all duration-300"></span>
-                    </div>
-                </div>
-
-                <!-- Asset Details Pack -->
-              <!-- Asset Details Pack (Zaktualizowany Nowoczesny Opis Produktu) -->
-<!-- Asset Details Pack (Animated & English Version) -->
-                <div class="border border-zinc-800 bg-zinc-950 p-6 rounded-lg space-y-6 shadow-xl transition-all duration-500 hover:border-zinc-700">
-                    
-                    <!-- HEADER SECTION WITH ANIMATED BADGE -->
-                    <div class="flex justify-between items-start border-b border-zinc-900 pb-4">
-                        <div>
-                            <span class="text-neon text-[10px] uppercase font-bold tracking-widest block animate-pulse">// SYSTEM_STATUS: OPERATIONAL</span>
-                            <h1 class="font-racing text-2xl font-black text-white uppercase tracking-tight mt-1">Logic Grip </h1>
-                        </div>
-                        <!-- Animated glowing badge -->
-                        <div class="bg-neon/10 border border-neon text-[10px] font-mono text-neon font-bold uppercase tracking-wider px-3 py-1 rounded animate-[pulse_2s_infinite] shadow-[0_0_15px_rgba(212,255,0,0.3)]">
-                            Private Build
-                        </div>
-                    </div>
-
-                    <!-- MAIN DESCRIPTION -->
-                    <p class="text-zinc-400 text-xs leading-relaxed font-mono">
-                        Exclusive, fully optimized software engineered for peak precision and absolute security. Each license generates a unique code signature (Private Cheat), ensuring full independence and complete infrastructure protection against mass detections.
+                    <div class="text-neon text-[10px] uppercase font-bold tracking-widest mb-3 animate-pulse">// MODULE_01</div>
+                    <h3 class="font-racing text-3xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-neon transition">Assetto Corsa Speed</h3>
+                    <p class="text-zinc-400 text-sm font-mono mb-8 leading-relaxed h-16">
+                        Advanced velocity manipulation and physics boundary bypass for classic Assetto Corsa. Override server-side limiters flawlessly.
                     </p>
+                    <div class="flex justify-between items-end border-t border-zinc-900 pt-6">
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
+                            <span class="text-2xl font-mono text-white font-bold">$80.00</span>
+                        </div>
+                        <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg">
+                            Select Asset
+                        </button>
+                    </div>
+                </div>
 
-                    <!-- TECHNICAL SPECIFICATIONS GRID WITH STAGGERED HOVER ANIMATIONS -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <!-- Card 2: ACC Grip -->
+                <div class="border border-zinc-800 bg-zinc-950 p-8 rounded-lg shadow-xl hover:border-neon hover:shadow-neon transition-all duration-300 cursor-pointer group relative overflow-hidden" onclick="selectProduct('grip')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-neon/10 blur-2xl group-hover:bg-neon/20 transition"></div>
+                    
+                    <!-- MIEJSCE NA ZDJĘCIE - KARTA 2 -->
+                    <div class="w-full h-48 mb-6 rounded-md bg-zinc-900 border border-zinc-800 overflow-hidden relative flex items-center justify-center">
+                        <!-- Podmień 'src' na ścieżkę do Twojego zdjęcia -->
+                        <img src="img/Acc.webp" alt="ACC Grip" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <!-- Ten tekst zniknie, gdy wgrasz poprawne zdjęcie, służy jako placeholder -->
+                        <span class="absolute text-zinc-700 text-xs font-mono uppercase z-0">Miejsce na zdjęcie</span>
+                    </div>
+
+                    <div class="text-neon text-[10px] uppercase font-bold tracking-widest mb-3 animate-pulse">// MODULE_02</div>
+                    <h3 class="font-racing text-3xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-neon transition">ACC Grip Logic</h3>
+                    <p class="text-zinc-400 text-sm font-mono mb-8 leading-relaxed h-16">
+                        Exclusive, undetected private grip software for Competizione. Maximize contact patch equilibrium and slip angle automation.
+                    </p>
+                    <div class="flex justify-between items-end border-t border-zinc-900 pt-6">
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
+                            <span class="text-2xl font-mono text-white font-bold">$200.00 <span class="text-xs text-zinc-600 line-through ml-2">$240.00</span></span>
+                        </div>
+                        <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg">
+                            Select Asset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT VIEW -->
+        <div id="product-view" class="w-full max-w-7xl hidden">
+            
+            <button onclick="goBack()" class="mb-6 flex items-center space-x-2 text-zinc-500 hover:text-neon transition text-xs font-mono uppercase tracking-widest cursor-pointer group">
+                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                <span>Return to Asset Selection</span>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <!-- Left Side: Interactive Gallery & Asset Details -->
+                <div class="md:col-span-8 space-y-6">
+                    <!-- IMAGE SLIDER -->
+                    <div class="border border-zinc-800 bg-zinc-950 rounded-lg overflow-hidden relative group shadow-2xl">
+                        <div class="absolute top-3 left-3 z-20 font-mono text-[9px] text-neon bg-black/80 px-2 py-0.5 border border-neon/20 uppercase tracking-widest rounded-sm">
+                            VISUAL_STREAM // CORE_PREVIEW
+                        </div>
                         
-                        <!-- Windows 10/11 -->
-                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
-                            <i class="fa-brands fa-windows text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
-                            <div class="space-y-0.5">
-                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Compatibility</span>
-                                <span class="text-[10px] text-zinc-500 font-mono">Windows 10 / Windows 11</span>
-                            </div>
+                        <div class="relative h-80 md:h-[520px] w-full overflow-hidden flex items-center justify-center bg-zinc-900/50">
+                            <img id="slide1" src="img/U1.webp" class="slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100" alt="Preview 1">
+                            <img id="slide2" src="img/U2.webp" class="slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0" alt="Preview 2">
                         </div>
 
-                        <!-- Easy Setup -->
-                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
-                            <i class="fa-solid fa-sliders text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
-                            <div class="space-y-0.5">
-                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Setup Process</span>
-                                <span class="text-[10px] text-zinc-500 font-mono">Simple 1-click installation</span>
-                            </div>
-                        </div>
+                        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
+                            <i class="fa-solid fa-chevron-left text-sm"></i>
+                        </button>
+                        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </button>
 
-                        <!-- Undetected -->
-                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
-                            <i class="fa-solid fa-user-secret text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
-                            <div class="space-y-0.5">
-                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Security Core</span>
-                                <span class="text-[10px] text-zinc-500 font-mono">Undetected by telemetry telemetry streams</span>
-                            </div>
+                        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                            <span id="dot1" class="w-6 h-1 bg-neon rounded-full transition-all duration-300"></span>
+                            <span id="dot2" class="w-2 h-1 bg-zinc-700 rounded-full transition-all duration-300"></span>
                         </div>
-
-                        <!-- Mobile Control -->
-                        <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
-                            <i class="fa-solid fa-mobile-screen-button text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
-                            <div class="space-y-0.5">
-                                <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Mobile Web-Radar</span>
-                                <span class="text-[10px] text-zinc-500 font-mono">On-the-fly config via Smartphone (QR)</span>
-                            </div>
-                        </div>
-
                     </div>
 
-                    <!-- FEATURE HIGHLIGHT: STREAM PROOF (WITH GLOW & HOVER EFFECTS) -->
-                    <div class="border border-neon/20 bg-neon/[0.02] p-4 rounded-md flex items-center justify-between transition-all duration-300 hover:border-neon/40 hover:bg-neon/[0.04] shadow-[inset_0_0_15px_rgba(212,255,0,0.02)] hover:shadow-[0_0_20px_rgba(212,255,0,0.05)]">
-                        <div class="flex items-center space-x-3">
-                            <!-- Glowing pulsating dot -->
-                            <div class="w-2 h-2 bg-neon rounded-full animate-ping absolute"></div>
-                            <div class="w-2 h-2 bg-neon rounded-full relative"></div>
-                            
-                            <div class="space-y-0.5">
-                                <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Stream Proof Technology</span>
-                                <span class="text-[10px] text-zinc-400 font-mono">Overlay completely invisible on OBS, Discord, and raw stream captures.</span>
+                    <!-- Asset Details Pack -->
+                    <div class="border border-zinc-800 bg-zinc-950 p-6 rounded-lg space-y-6 shadow-xl transition-all duration-500 hover:border-zinc-700">
+                        <div class="flex justify-between items-start border-b border-zinc-900 pb-4">
+                            <div>
+                                <span class="text-neon text-[10px] uppercase font-bold tracking-widest block animate-pulse">// SYSTEM_STATUS: OPERATIONAL</span>
+                                <h1 id="prod-title" class="font-racing text-2xl font-black text-white uppercase tracking-tight mt-1">Logic Grip</h1>
+                            </div>
+                            <div class="bg-neon/10 border border-neon text-[10px] font-mono text-neon font-bold uppercase tracking-wider px-3 py-1 rounded animate-[pulse_2s_infinite] shadow-[0_0_15px_rgba(212,255,0,0.3)]">
+                                Private Build
                             </div>
                         </div>
-                        <i class="fa-solid fa-video-slash text-zinc-700 text-base hidden sm:block"></i>
+
+                        <p class="text-zinc-400 text-xs leading-relaxed font-mono">
+                            Exclusive, fully optimized software engineered for peak precision and absolute security. Each license generates a unique code signature (Private Cheat), ensuring full independence and complete infrastructure protection against mass detections.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                                <i class="fa-brands fa-windows text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                                <div class="space-y-0.5">
+                                    <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Compatibility</span>
+                                    <span class="text-[10px] text-zinc-500 font-mono">Windows 10 / Windows 11</span>
+                                </div>
+                            </div>
+                            <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                                <i class="fa-solid fa-sliders text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                                <div class="space-y-0.5">
+                                    <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Setup Process</span>
+                                    <span class="text-[10px] text-zinc-500 font-mono">Simple 1-click installation</span>
+                                </div>
+                            </div>
+                            <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                                <i class="fa-solid fa-user-secret text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                                <div class="space-y-0.5">
+                                    <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Security Core</span>
+                                    <span class="text-[10px] text-zinc-500 font-mono">Undetected by telemetry streams</span>
+                                </div>
+                            </div>
+                            <div class="border border-zinc-900 bg-zinc-900/20 p-3 rounded flex items-start space-x-3 transition-all duration-300 hover:bg-zinc-900/50 hover:border-zinc-700 hover:-translate-y-0.5 group">
+                                <i class="fa-solid fa-mobile-screen-button text-zinc-500 text-sm mt-0.5 transition-colors duration-300 group-hover:text-neon"></i>
+                                <div class="space-y-0.5">
+                                    <span class="text-[11px] font-bold text-white block uppercase tracking-wide">Mobile Web-Radar</span>
+                                    <span class="text-[10px] text-zinc-500 font-mono">On-the-fly config via Smartphone (QR)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-neon/20 bg-neon/[0.02] p-4 rounded-md flex items-center justify-between transition-all duration-300 hover:border-neon/40 hover:bg-neon/[0.04] shadow-[inset_0_0_15px_rgba(212,255,0,0.02)] hover:shadow-[0_0_20px_rgba(212,255,0,0.05)]">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-neon rounded-full animate-ping absolute"></div>
+                                <div class="w-2 h-2 bg-neon rounded-full relative"></div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Stream Proof Technology</span>
+                                    <span class="text-[10px] text-zinc-400 font-mono">Overlay completely invisible on OBS, Discord, and raw stream captures.</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-video-slash text-zinc-700 text-base hidden sm:block"></i>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Right Side: Checkout Form Engine -->
+                <div class="md:col-span-4 border border-zinc-800 bg-[#090a0c] p-6 rounded-lg space-y-5 shadow-2xl relative">
+                    <div class="text-center space-y-1">
+                        <h3 class="font-racing text-lg font-bold text-white uppercase">Secure Settlement</h3>
+                        <p class="text-zinc-500 text-[10px] uppercase font-mono">Select Crypto Protocol</p>
+                    </div>
+
+                    <!-- LICENSE SELECTION -->
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">1. Selected License Term</span>
+                        <div class="border border-neon bg-neon/5 p-4 rounded flex justify-between items-center">
+                            <div class="space-y-0.5">
+                                <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Lifetime Access</span>
+                                <span class="text-[10px] text-zinc-400 font-mono">Unlimited future updates</span>
+                            </div>
+                            <span id="prod-price-label" class="text-sm text-neon font-mono font-black tracking-tight">$200.00 USD</span>
+                        </div>
+                    </div>
+
+                    <!-- CRYPTO OPTIONS -->
+                    <div class="space-y-2">
+                        <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">2. Settlement Network</span>
+                        <div class="grid grid-cols-3 gap-2">
+                            <label class="border border-neon bg-neon/5 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer transition" id="crypto-btc">
+                                <i class="fa-brands fa-bitcoin text-amber-500 text-base mb-1"></i>
+                                <span class="text-[10px] font-bold text-white font-mono">BTC</span>
+                                <input type="radio" name="crypto" value="BTC" checked onclick="selectCrypto('BTC')" class="hidden">
+                            </label>
+                            <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-eth">
+                                <i class="fa-brands fa-ethereum text-indigo-400 text-base mb-1"></i>
+                                <span class="text-[10px] font-bold text-zinc-400 font-mono">ETH</span>
+                                <input type="radio" name="crypto" value="ETH" onclick="selectCrypto('ETH')" class="hidden">
+                            </label>
+                            <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-ltc">
+                                <i class="fa-solid fa-coins text-sky-400 text-base mb-1"></i>
+                                <span class="text-[10px] font-bold text-zinc-400 font-mono">LTC</span>
+                                <input type="radio" name="crypto" value="LTC" onclick="selectCrypto('LTC')" class="hidden">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- PRICING SUMMARY -->
+                    <div class="bg-zinc-900/30 border border-zinc-900 p-4 rounded space-y-1 font-mono text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-zinc-500">Asset Pack:</span>
+                            <span id="summary-asset-name" class="text-zinc-300 font-bold">ACC_GRIP_SPA // LIFETIME</span>
+                        </div>
+                        <div class="border-t border-zinc-900 mt-2 pt-2 flex justify-between font-bold text-sm">
+                            <span class="text-white">Price Due:</span>
+                            <span class="text-neon" id="summary-crypto-value"><i class="fa-solid fa-circle-notch animate-spin text-[10px]"></i> Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- TERMS OF SERVICE AGREEMENT -->
+                    <div class="flex items-start space-x-2 pt-1">
+                        <input type="checkbox" id="tosCheck" class="accent-neon mt-0.5 cursor-pointer">
+                        <label for="tosCheck" class="text-[10px] font-mono text-zinc-500 leading-tight cursor-pointer select-none">
+                            I acknowledge the system protocols and agree to the <a href="term.html" class="text-neon hover:underline">Terms of Service</a>.
+                        </label>
+                    </div>
+
+                    <!-- AUTHORIZE BUTTON -->
+                    <button onclick="processTransaction()" class="w-full bg-neon text-black font-racing font-bold text-xs uppercase tracking-widest py-4 shadow-neon hover:shadow-neon-intense transition flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>Authorize Transaction</span>
+                    </button>
                 </div>
             </div>
-
-            <!-- Right Side: Checkout Form Engine -->
-            <div class="md:col-span-4 border border-zinc-800 bg-[#090a0c] p-6 rounded-lg space-y-5 shadow-2xl relative">
-                <div class="text-center space-y-1">
-                    <h3 class="font-racing text-lg font-bold text-white uppercase">Secure Settlement</h3>
-                    <p class="text-zinc-500 text-[10px] uppercase font-mono">Select Crypto Protocol</p>
-                </div>
-
-                <!-- LICENSE SELECTION -->
-                <div class="space-y-2">
-                    <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">1. Selected License Term</span>
-                    <div class="border border-neon bg-neon/5 p-4 rounded flex justify-between items-center">
-                        <div class="space-y-0.5">
-                            <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Lifetime Access</span>
-                            <span class="text-[10px] text-zinc-400 font-mono">Unlimited future updates</span>
-                        </div>
-                        <span class="text-sm text-neon font-mono font-black tracking-tight">$240.00 USD</span>
-                    </div>
-                </div>
-
-                <!-- CRYPTO OPTIONS -->
-                <div class="space-y-2">
-                    <span class="text-[10px] text-zinc-500 uppercase font-bold font-mono tracking-wider block">2. Settlement Network</span>
-                    <div class="grid grid-cols-3 gap-2">
-                        <label class="border border-neon bg-neon/5 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer transition" id="crypto-btc">
-                            <i class="fa-brands fa-bitcoin text-amber-500 text-base mb-1"></i>
-                            <span class="text-[10px] font-bold text-white font-mono">BTC</span>
-                            <input type="radio" name="crypto" value="BTC" checked onclick="selectCrypto('BTC')" class="hidden">
-                        </label>
-                        <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-eth">
-                            <i class="fa-brands fa-ethereum text-indigo-400 text-base mb-1"></i>
-                            <span class="text-[10px] font-bold text-zinc-400 font-mono">ETH</span>
-                            <input type="radio" name="crypto" value="ETH" onclick="selectCrypto('ETH')" class="hidden">
-                        </label>
-                        <label class="border border-zinc-800 p-2 rounded flex flex-col items-center justify-center text-center cursor-pointer hover:border-zinc-700 transition" id="crypto-ltc">
-                            <i class="fa-solid fa-coins text-sky-400 text-base mb-1"></i>
-                            <span class="text-[10px] font-bold text-zinc-400 font-mono">LTC</span>
-                            <input type="radio" name="crypto" value="LTC" onclick="selectCrypto('LTC')" class="hidden">
-                        </label>
-                    </div>
-                </div>
-
-                <!-- PRICING SUMMARY -->
-                <div class="bg-zinc-900/30 border border-zinc-900 p-4 rounded space-y-1 font-mono text-xs">
-                    <div class="flex justify-between">
-                        <span class="text-zinc-500">Asset Pack:</span>
-                        <span class="text-zinc-300 font-bold">ACC_GRIP_SPA // LIFETIME</span>
-                    </div>
-                    <div class="border-t border-zinc-900 mt-2 pt-2 flex justify-between font-bold text-sm">
-                        <span class="text-white">Price Due:</span>
-                        <span class="text-neon" id="summary-crypto-value"><i class="fa-solid fa-circle-notch animate-spin text-[10px]"></i> Loading...</span>
-                    </div>
-                </div>
-
-                <!-- TERMS OF SERVICE AGREEMENT -->
-                <div class="flex items-start space-x-2 pt-1">
-                    <input type="checkbox" id="tosCheck" class="accent-neon mt-0.5 cursor-pointer">
-                    <label for="tosCheck" class="text-[10px] font-mono text-zinc-500 leading-tight cursor-pointer select-none">
-                        I acknowledge the system protocols and agree to the <a href="term.html" class="text-neon hover:underline">Terms of Service</a>.
-                    </label>
-                </div>
-
-                <!-- AUTHORIZE BUTTON -->
-                <button onclick="processTransaction()" class="w-full bg-neon text-black font-racing font-bold text-xs uppercase tracking-widest py-4 shadow-neon hover:shadow-neon-intense transition flex items-center justify-center space-x-2 cursor-pointer">
-                    <span>Authorize Transaction</span>
-                </button>
-            </div>
-
         </div>
     </main>
 
@@ -229,7 +282,7 @@
             <!-- TOP SEGMENT -->
             <div class="text-center border-b border-zinc-900 pb-4 space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">// Calculated Node Settlement</span>
-                <div class="text-2xl font-black text-white font-racing tracking-wide">$240.00 USD</div>
+                <div id="modal-usd-amount" class="text-2xl font-black text-white font-racing tracking-wide">$200.00 USD</div>
                 <div class="text-base font-mono text-neon font-bold tracking-tight" id="modal-crypto-amount">---</div>
                 
                 <div class="flex items-center justify-center space-x-1.5 font-mono text-[9px] text-zinc-500 pt-1">
@@ -267,6 +320,54 @@
 
     <!-- LOGIC ENGINE -->
     <script>
+        // SELECTION LOGIC
+        let currentBaseUsd = 200;
+        
+        function selectProduct(productType) {
+            document.getElementById('selection-view').classList.add('hidden');
+            document.getElementById('product-view').classList.remove('hidden');
+
+            // Pobieramy elementy obrazków z galerii
+            const slide1 = document.getElementById('slide1');
+            const slide2 = document.getElementById('slide2');
+
+            if (productType === 'speed') {
+                currentBaseUsd = 80;
+                document.getElementById('prod-title').innerText = "Assetto Corsa Speed";
+                document.getElementById('prod-price-label').innerText = "$80.00 USD";
+                document.getElementById('modal-usd-amount').innerText = "$80.00 USD";
+                document.getElementById('summary-asset-name').innerText = "AC_SPEED // LIFETIME";
+                
+                // Ustawiamy zdjęcia dla Assetto Corsa Speed
+                slide1.src = "img/menu.webp"; // Zmień na właściwą ścieżkę do 1. zdjęcia
+                slide2.src = "img/game.webp"; // Zmień na właściwą ścieżkę do 2. zdjęcia
+            } else {
+                currentBaseUsd = 200;
+                document.getElementById('prod-title').innerText = "Assetto Corsa Competizione Grip";
+                document.getElementById('prod-price-label').innerText = "$200.00 USD";
+                document.getElementById('modal-usd-amount').innerText = "$200.00 USD";
+                document.getElementById('summary-asset-name').innerText = "ACC_GRIP_SPA // LIFETIME";
+                
+                // Ustawiamy zdjęcia dla ACC Grip (zostawiłem Twoje oryginalne ścieżki)
+                slide1.src = "img/U1.webp"; // Zmień na właściwą ścieżkę do 1. zdjęcia
+                slide2.src = "img/U2.webp"; // Zmień na właściwą ścieżkę do 2. zdjęcia
+            }
+            calculatePricing();
+            
+            // Resetujemy galerię do pierwszego zdjęcia przy wejściu w produkt
+            currentSlideIndex = 1;
+            updateGalleryUI();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goBack() {
+            document.getElementById('product-view').classList.add('hidden');
+            document.getElementById('selection-view').classList.remove('hidden');
+        }
+
+        // SLIDER LOGIC
         let currentSlideIndex = 1;
         function updateGalleryUI() {
             const s1 = document.getElementById('slide1');
@@ -288,6 +389,7 @@
         function nextSlide() { currentSlideIndex = currentSlideIndex === 1 ? 2 : 1; updateGalleryUI(); }
         function prevSlide() { currentSlideIndex = currentSlideIndex === 2 ? 1 : 2; updateGalleryUI(); }
 
+        // CRYPTO LOGIC
         const cryptoWallets = {
             'BTC': 'bc1qjuhwe6xxsft87kdhyx7rrk9nffz4jrrh5d4ww6',
             'ETH': '0xAbFAD7cA0DbE5B750f479540C33d99f67bc358b7',
@@ -295,7 +397,6 @@
         };
 
         let selectedCryptoAsset = 'BTC';
-        const baseUsd = 240;
         let cachedRates = null;
 
         async function fetchLiveRates() {
@@ -334,7 +435,7 @@
             if (!cachedRates) return;
             
             const activeRate = cachedRates[selectedCryptoAsset];
-            const cryptoCalculatedAmount = (baseUsd / activeRate).toFixed(5);
+            const cryptoCalculatedAmount = (currentBaseUsd / activeRate).toFixed(5);
 
             document.getElementById('summary-crypto-value').innerText = `${cryptoCalculatedAmount} ${selectedCryptoAsset}`;
             
