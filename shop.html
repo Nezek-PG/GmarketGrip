@@ -95,7 +95,7 @@
                     <div class="flex justify-between items-end border-t border-zinc-900 pt-6">
                         <div class="space-y-1">
                             <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
-                            <span class="text-2xl font-mono text-white font-bold">$200.00 <span class="text-xs text-zinc-600 line-through ml-2">$240.00</span></span>
+                            <span class="text-2xl font-mono text-white font-bold">$140.00 <span class="text-xs text-zinc-600 line-through ml-2">$240.00</span></span>
                         </div>
                         <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg">
                             Select Asset
@@ -216,7 +216,7 @@
                                 <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Lifetime Access</span>
                                 <span class="text-[10px] text-zinc-400 font-mono">Unlimited future updates</span>
                             </div>
-                            <span id="prod-price-label" class="text-sm text-neon font-mono font-black tracking-tight">$200.00 USD</span>
+                            <span id="prod-price-label" class="text-sm text-neon font-mono font-black tracking-tight">$140.00 USD</span>
                         </div>
                     </div>
 
@@ -282,7 +282,7 @@
             <!-- TOP SEGMENT -->
             <div class="text-center border-b border-zinc-900 pb-4 space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">// Calculated Node Settlement</span>
-                <div id="modal-usd-amount" class="text-2xl font-black text-white font-racing tracking-wide">$200.00 USD</div>
+                <div id="modal-usd-amount" class="text-2xl font-black text-white font-racing tracking-wide">$140.00 USD</div>
                 <div class="text-base font-mono text-neon font-bold tracking-tight" id="modal-crypto-amount">---</div>
                 
                 <div class="flex items-center justify-center space-x-1.5 font-mono text-[9px] text-zinc-500 pt-1">
@@ -321,7 +321,7 @@
     <!-- LOGIC ENGINE -->
     <script>
         // SELECTION LOGIC
-        let currentBaseUsd = 200;
+        let currentBaseUsd = 140;
         
         function selectProduct(productType) {
             document.getElementById('selection-view').classList.add('hidden');
@@ -342,10 +342,10 @@
                 slide1.src = "img/menu.webp"; // Zmień na właściwą ścieżkę do 1. zdjęcia
                 slide2.src = "img/game.webp"; // Zmień na właściwą ścieżkę do 2. zdjęcia
             } else {
-                currentBaseUsd = 200;
+                currentBaseUsd = 140;
                 document.getElementById('prod-title').innerText = "Assetto Corsa Competizione Grip";
-                document.getElementById('prod-price-label').innerText = "$200.00 USD";
-                document.getElementById('modal-usd-amount').innerText = "$200.00 USD";
+                document.getElementById('prod-price-label').innerText = "$140.00 USD";
+                document.getElementById('modal-usd-amount').innerText = "$140.00 USD";
                 document.getElementById('summary-asset-name').innerText = "ACC_GRIP_SPA // LIFETIME";
                 
                 // Ustawiamy zdjęcia dla ACC Grip (zostawiłem Twoje oryginalne ścieżki)
