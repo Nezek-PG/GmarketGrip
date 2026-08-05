@@ -25,6 +25,21 @@
         .slide-img {
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
         }
+
+        /* Transition and click animations */
+        .view-transition {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @keyframes pulseGlow {
+            0% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.02); filter: brightness(1.2); box-shadow: 0 0 40px rgba(212,255,0,0.6); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
+
+        .animate-click-pop {
+            animation: pulseGlow 0.4s ease-out forwards;
+        }
     </style>
 </head>
 <body class="text-gray-300 min-h-screen flex flex-col justify-between selection:bg-neon selection:text-black relative">
@@ -40,73 +55,113 @@
         
        
         <!-- SELECTION VIEW -->
-        <div id="selection-view" class="w-full max-w-5xl mx-auto space-y-12">
+        <div id="selection-view" class="w-full max-w-5xl mx-auto space-y-12 view-transition">
             <div class="text-center space-y-2">
                 <h2 class="font-racing text-3xl font-black text-white uppercase tracking-tight">Select Target Asset</h2>
                 <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest">Initialize loadout sequence for your simulator</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1: AC Speed -->
-                <div class="border border-zinc-800 bg-zinc-950 p-8 rounded-lg shadow-xl hover:border-neon hover:shadow-neon transition-all duration-300 cursor-pointer group relative overflow-hidden" onclick="selectProduct('speed')">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Card 1: AC Speed (Portrait / Higher Profile) -->
+                <div id="card-speed" class="border border-zinc-800 bg-zinc-950/60 rounded-xl overflow-hidden hover:border-neon/60 transition-all duration-500 flex flex-col shadow-2xl hover:shadow-neon cursor-pointer group relative transform hover:-translate-y-1.5" onclick="selectProduct('speed', event)">
+                    <!-- Top neon animated sweep line -->
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-neon to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                     <div class="absolute top-0 right-0 w-24 h-24 bg-neon/10 blur-2xl group-hover:bg-neon/20 transition"></div>
                     
-                    <!-- MIEJSCE NA ZDJĘCIE - KARTA 1 -->
-                    <div class="w-full h-48 mb-6 rounded-md bg-zinc-900 border border-zinc-800 overflow-hidden relative flex items-center justify-center">
-                        <!-- Podmień 'src' na ścieżkę do Twojego zdjęcia -->
-                        <img src="img/ac.webp" alt="AC Speed" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <!-- Ten tekst zniknie, gdy wgrasz poprawne zdjęcie, służy jako placeholder -->
-                        <span class="absolute text-zinc-700 text-xs font-mono uppercase z-0">Miejsce na zdjęcie</span>
+                    <!-- Photo / Image Space Container (Height h-96) -->
+                    <div class="relative w-full h-96 bg-zinc-900/50 overflow-hidden border-b border-zinc-900 flex items-center justify-center">
+                        <div class="absolute top-3 left-3 z-20 font-mono text-[9px] text-neon bg-black/80 px-2 py-1 border border-neon/30 uppercase tracking-widest rounded-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-gauge-high text-neon"></i> MODULE_01 // SPEED_BOOST
+                        </div>
+                        <img src="img/ac.webp" alt="AC Speed" class="w-full h-full object-cover filter brightness-[0.7] contrast-110 group-hover:scale-105 group-hover:brightness-95 transition-all duration-700 z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
                     </div>
 
-                    <div class="text-neon text-[10px] uppercase font-bold tracking-widest mb-3 animate-pulse">// MODULE_01</div>
-                    <h3 class="font-racing text-3xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-neon transition">Assetto Corsa Speed</h3>
-                    <p class="text-zinc-400 text-sm font-mono mb-8 leading-relaxed h-16">
-                        Advanced velocity manipulation and physics boundary bypass for classic Assetto Corsa. Override server-side limiters flawlessly.
-                    </p>
-                    <div class="flex justify-between items-end border-t border-zinc-900 pt-6">
-                        <div class="space-y-1">
-                            <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
-                            <span class="text-2xl font-mono text-white font-bold">$73.00</span>
+                    <!-- Content Space -->
+                    <div class="p-8 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono text-xs text-neon uppercase tracking-wider font-bold flex items-center gap-2">
+                                    <i class="fa-solid fa-microchip text-neon"></i> ASSETTO CORSA 
+                                </span>
+                                <span class="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 animate-pulse flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-check"></i> UNDETECTED
+                                </span>
+                            </div>
+                            
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-racing text-2xl font-bold text-white uppercase group-hover:text-neon transition-colors">Assetto Corsa Speed</h3>
+                            </div>
+
+                            <p class="text-zinc-400 text-xs leading-relaxed font-mono">
+                                Advanced velocity manipulation and physics boundary bypass for classic Assetto Corsa. Override server-side limiters flawlessly. Assetto Corsa Cheat.
+                            </p>
                         </div>
-                        <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg">
-                            Select Asset
-                        </button>
+                        
+                        <div class="flex items-center justify-between pt-6 border-t border-zinc-900 mt-auto">
+                            <div class="space-y-0.5">
+                                <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
+                                <span class="font-racing text-xl font-black text-neon">$73.<span class="text-xs">00</span></span>
+                            </div>
+                            <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg flex items-center gap-2">
+                                <span>Select Asset</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2: ACC Grip -->
-                <div class="border border-zinc-800 bg-zinc-950 p-8 rounded-lg shadow-xl hover:border-neon hover:shadow-neon transition-all duration-300 cursor-pointer group relative overflow-hidden" onclick="selectProduct('grip')">
+                <!-- Card 2: ACC Grip (Portrait / Higher Profile) -->
+                <div id="card-grip" class="border border-zinc-800 bg-zinc-950/60 rounded-xl overflow-hidden hover:border-neon/60 transition-all duration-500 flex flex-col shadow-2xl hover:shadow-neon cursor-pointer group relative transform hover:-translate-y-1.5" onclick="selectProduct('grip', event)">
+                    <!-- Top neon animated sweep line -->
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-neon to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                     <div class="absolute top-0 right-0 w-24 h-24 bg-neon/10 blur-2xl group-hover:bg-neon/20 transition"></div>
                     
-                    <!-- MIEJSCE NA ZDJĘCIE - KARTA 2 -->
-                    <div class="w-full h-48 mb-6 rounded-md bg-zinc-900 border border-zinc-800 overflow-hidden relative flex items-center justify-center">
-                        <!-- Podmień 'src' na ścieżkę do Twojego zdjęcia -->
-                        <img src="img/Acc.webp" alt="ACC Grip" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <!-- Ten tekst zniknie, gdy wgrasz poprawne zdjęcie, służy jako placeholder -->
-                        <span class="absolute text-zinc-700 text-xs font-mono uppercase z-0">Miejsce na zdjęcie</span>
+                    <!-- Photo / Image Space Container (Height h-96) -->
+                    <div class="relative w-full h-96 bg-zinc-900/50 overflow-hidden border-b border-zinc-900 flex items-center justify-center">
+                        <div class="absolute top-3 left-3 z-20 font-mono text-[9px] text-neon bg-black/80 px-2 py-1 border border-neon/30 uppercase tracking-widest rounded-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved text-neon"></i> MODULE_02 // GRIP_MATRIX
+                        </div>
+                        <img src="img/Acc.webp" alt="ACC Grip" class="w-full h-full object-cover filter brightness-[0.7] contrast-110 group-hover:scale-105 group-hover:brightness-95 transition-all duration-700 z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
                     </div>
 
-                    <div class="text-neon text-[10px] uppercase font-bold tracking-widest mb-3 animate-pulse">// MODULE_02</div>
-                    <h3 class="font-racing text-3xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-neon transition">ACC Grip Logic</h3>
-                    <p class="text-zinc-400 text-sm font-mono mb-8 leading-relaxed h-16">
-                        Exclusive, undetected private grip software for Competizione. Maximize contact patch equilibrium and slip angle automation.
-                    </p>
-                    <div class="flex justify-between items-end border-t border-zinc-900 pt-6">
-                        <div class="space-y-1">
-                            <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
-                            <span class="text-2xl font-mono text-white font-bold">$140.00 <span class="text-xs text-zinc-600 line-through ml-2">$240.00</span></span>
+                    <!-- Content Space -->
+                    <div class="p-8 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono text-xs text-neon uppercase tracking-wider font-bold flex items-center gap-2">
+                                    <i class="fa-solid fa-bolt text-neon"></i> ASSETTO CORSA COMPETIZIONE 
+                                </span>
+                                <span class="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 animate-pulse flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-check"></i> UNDETECTED
+                                </span>
+                            </div>
+
+                            <div class="flex justify-between items-start gap-4">
+                                <h3 class="font-racing text-2xl font-bold text-white uppercase group-hover:text-neon transition-colors">ACC Grip Logic</h3>
+                            </div>
+
+                            <p class="text-zinc-400 text-xs leading-relaxed font-mono">
+                                Exclusive, undetected private grip software for Assetto Corsa Competizione. Maximize contact patch equilibrium and slip angle automation. Assetto Corsa Competizione cheat.
+                            </p>
                         </div>
-                        <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg">
-                            Select Asset
-                        </button>
+                        
+                        <div class="flex items-center justify-between pt-6 border-t border-zinc-900 mt-auto">
+                            <div class="space-y-0.5">
+                                <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
+                                <span class="font-racing text-xl font-black text-neon">$140.<span class="text-xs">00</span> <span class="text-[11px] text-zinc-600 line-through font-normal ml-1">$240.00</span></span>
+                            </div>
+                            <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg flex items-center gap-2">
+                                <span>Select Asset</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- PRODUCT VIEW -->
-        <div id="product-view" class="w-full max-w-7xl hidden">
+        <div id="product-view" class="w-full max-w-7xl hidden view-transition opacity-0 scale-95">
             
             <button onclick="goBack()" class="mb-6 flex items-center space-x-2 text-zinc-500 hover:text-neon transition text-xs font-mono uppercase tracking-widest cursor-pointer group">
                 <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
@@ -123,8 +178,8 @@
                         </div>
                         
                         <div class="relative h-80 md:h-[520px] w-full overflow-hidden flex items-center justify-center bg-zinc-900/50">
-                            <img id="slide1" src="img/U1.webp" class="slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100" alt="Preview 1">
-                            <img id="slide2" src="img/U2.webp" class="slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0" alt="Preview 2">
+                            <img id="slide1" src="img/U2.webp" class="slide-img absolute inset-0 w-full h-full object-cover brightness-90 translate-x-0 opacity-100" alt="Preview 1">
+                            <img id="slide2" src="img/U1.webp" class="slide-img absolute inset-0 w-full h-full object-cover translate-x-full opacity-0" alt="Preview 2">
                         </div>
 
                         <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-neon hover:text-black border border-zinc-800 hover:border-neon w-10 h-10 rounded-full flex items-center justify-center text-white transition duration-300 cursor-pointer group-hover:scale-105">
@@ -320,14 +375,42 @@
 
     <!-- LOGIC ENGINE -->
     <script>
-        // SELECTION LOGIC
         let currentBaseUsd = 140;
         
-        function selectProduct(productType) {
-            document.getElementById('selection-view').classList.add('hidden');
-            document.getElementById('product-view').classList.remove('hidden');
+        function selectProduct(productType, event) {
+            const card = document.getElementById(`card-${productType}`);
+            
+            // Trigger zoom-in click animation effect
+            card.classList.add('animate-click-pop');
 
-            // Pobieramy elementy obrazków z galerii
+            setTimeout(() => {
+                card.classList.remove('animate-click-pop');
+                
+                // Push state to browser history so back button works smoothly
+                history.pushState({ view: 'product', type: productType }, '', `#${productType}`);
+                showProductView(productType);
+            }, 300);
+        }
+
+        function showProductView(productType) {
+            const selectionView = document.getElementById('selection-view');
+            const productView = document.getElementById('product-view');
+
+            // Fade out selection view
+            selectionView.style.opacity = '0';
+            selectionView.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                selectionView.classList.add('hidden');
+                productView.classList.remove('hidden');
+                
+                // Fade in product view
+                setTimeout(() => {
+                    productView.style.opacity = '1';
+                    productView.style.transform = 'scale(1)';
+                }, 50);
+            }, 250);
+
             const slide1 = document.getElementById('slide1');
             const slide2 = document.getElementById('slide2');
 
@@ -338,9 +421,8 @@
                 document.getElementById('modal-usd-amount').innerText = "$73.00 USD";
                 document.getElementById('summary-asset-name').innerText = "AC_SPEED // LIFETIME";
                 
-                // Ustawiamy zdjęcia dla Assetto Corsa Speed
-                slide1.src = "img/menu.webp"; // Zmień na właściwą ścieżkę do 1. zdjęcia
-                slide2.src = "img/game.webp"; // Zmień na właściwą ścieżkę do 2. zdjęcia
+                slide1.src = "img/menu.webp";
+                slide2.src = "img/game.webp";
             } else {
                 currentBaseUsd = 140;
                 document.getElementById('prod-title').innerText = "Assetto Corsa Competizione Grip";
@@ -348,24 +430,49 @@
                 document.getElementById('modal-usd-amount').innerText = "$140.00 USD";
                 document.getElementById('summary-asset-name').innerText = "ACC_GRIP_SPA // LIFETIME";
                 
-                // Ustawiamy zdjęcia dla ACC Grip (zostawiłem Twoje oryginalne ścieżki)
-                slide1.src = "img/U1.webp"; // Zmień na właściwą ścieżkę do 1. zdjęcia
-                slide2.src = "img/U2.webp"; // Zmień na właściwą ścieżkę do 2. zdjęcia
+                slide1.src = "img/U2.webp";
+                slide2.src = "img/U1.webp";
             }
             calculatePricing();
             
-            // Resetujemy galerię do pierwszego zdjęcia przy wejściu w produkt
             currentSlideIndex = 1;
             updateGalleryUI();
-            
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function goBack() {
-            document.getElementById('product-view').classList.add('hidden');
-            document.getElementById('selection-view').classList.remove('hidden');
+            history.pushState({ view: 'selection' }, '', window.location.pathname);
+            showSelectionView();
         }
+
+        function showSelectionView() {
+            const selectionView = document.getElementById('selection-view');
+            const productView = document.getElementById('product-view');
+
+            productView.style.opacity = '0';
+            productView.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                productView.classList.add('hidden');
+                selectionView.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    selectionView.style.opacity = '1';
+                    selectionView.style.transform = 'scale(1)';
+                }, 50);
+            }, 250);
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle Browser Arrow Buttons (Back / Forward)
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.view === 'product') {
+                showProductView(event.state.type);
+            } else {
+                showSelectionView();
+            }
+        });
 
         // SLIDER LOGIC
         let currentSlideIndex = 1;
