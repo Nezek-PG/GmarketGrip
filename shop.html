@@ -149,7 +149,7 @@
                         <div class="flex items-center justify-between pt-6 border-t border-zinc-900 mt-auto">
                             <div class="space-y-0.5">
                                 <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider block">Lifetime License</span>
-                                <span class="font-racing text-xl font-black text-neon">$140.<span class="text-xs">00</span> <span class="text-[11px] text-zinc-600 line-through font-normal ml-1">$240.00</span></span>
+                                <span class="font-racing text-xl font-black text-neon">$120.<span class="text-xs">00</span> <span class="text-[11px] text-zinc-600 line-through font-normal ml-1">$240.00</span></span>
                             </div>
                             <button class="bg-zinc-900 text-white border border-zinc-700 px-6 py-3 text-xs font-bold uppercase tracking-widest group-hover:bg-neon group-hover:text-black group-hover:border-neon transition duration-300 shadow-lg flex items-center gap-2">
                                 <span>Select Asset</span> <i class="fa-solid fa-arrow-right"></i>
@@ -271,7 +271,7 @@
                                 <span class="text-xs font-bold text-white font-mono block uppercase tracking-wider">Lifetime Access</span>
                                 <span class="text-[10px] text-zinc-400 font-mono">Unlimited future updates</span>
                             </div>
-                            <span id="prod-price-label" class="text-sm text-neon font-mono font-black tracking-tight">$140.00 USD</span>
+                            <span id="prod-price-label" class="text-sm text-neon font-mono font-black tracking-tight">$120.00 USD</span>
                         </div>
                     </div>
 
@@ -337,7 +337,7 @@
             <!-- TOP SEGMENT -->
             <div class="text-center border-b border-zinc-900 pb-4 space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">// Calculated Node Settlement</span>
-                <div id="modal-usd-amount" class="text-2xl font-black text-white font-racing tracking-wide">$140.00 USD</div>
+                <div id="modal-usd-amount" class="text-2xl font-black text-white font-racing tracking-wide">$120.00 USD</div>
                 <div class="text-base font-mono text-neon font-bold tracking-tight" id="modal-crypto-amount">---</div>
                 
                 <div class="flex items-center justify-center space-x-1.5 font-mono text-[9px] text-zinc-500 pt-1">
@@ -375,7 +375,7 @@
 
     <!-- LOGIC ENGINE -->
     <script>
-        let currentBaseUsd = 140;
+        let currentBaseUsd = 120;
         
         function selectProduct(productType, event) {
             const card = document.getElementById(`card-${productType}`);
@@ -424,10 +424,10 @@
                 slide1.src = "img/menu.webp";
                 slide2.src = "img/game.webp";
             } else {
-                currentBaseUsd = 140;
+                currentBaseUsd = 120;
                 document.getElementById('prod-title').innerText = "Assetto Corsa Competizione Grip";
-                document.getElementById('prod-price-label').innerText = "$140.00 USD";
-                document.getElementById('modal-usd-amount').innerText = "$140.00 USD";
+                document.getElementById('prod-price-label').innerText = "$120.00 USD";
+                document.getElementById('modal-usd-amount').innerText = "$120.00 USD";
                 document.getElementById('summary-asset-name').innerText = "ACC_GRIP_SPA // LIFETIME";
                 
                 slide1.src = "img/U2.webp";
